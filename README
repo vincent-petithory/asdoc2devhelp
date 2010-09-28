@@ -1,0 +1,18 @@
+# How to use
+
+## Install an asdoc
+
+    $ cd somewhere
+    $ ls
+    as3-gettext-0.5
+    $ as2dh --install --name=as3-gettext-0.5 --title="AS3 GNU Gettext API Reference" --asdoc-path=as3-gettext-0.5
+
+## Uninstall an asdoc
+
+    $ as2dh --uninstall --name="as3-gettext-0.5"
+
+## More
+
+You can choose a prefix where to install the asdoc, with `--prefix` option
+When uninstalling, dont forget to specify the prefix you used when installing.
+`--prefix` is optional. Defaults to `$HOME/.local`

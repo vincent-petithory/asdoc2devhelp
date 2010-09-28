@@ -1,0 +1,71 @@
+#!/usr/bin/env python
+#-*- coding:utf-8 -*-
+
+if __name__ == '__main__':
+    import optparse
+    import sys
+    import os
+    try:
+        import as2dh
+        import as2dh.dist
+    except ImportError:
+        sys.stderr.write('Error while importing as2dh module. Please check it is installed.\n')
+        sys.exit(2)
+    
+    # Config
+    parser = optparse.OptionParser(usage="%prog [OPTIONS] [ARGS]")
+    parser.add_option("-i", "--install", dest="do_install", default=False, action="store_true",
+                      help="Installs the asdoc for devhelp.")
+    parser.add_option("-u", "--uninstall", dest="do_uninstall", default=False, action="store_true",
+                      help="Uninstalls the asdoc for devhelp.")
+    parser.add_option("-n", "--name", dest="name", default=None,
+                      help="The name of the devhelp documentation. Defaults to the name of the asdoc directory with --install. Required for --uninstall.")
+    parser.add_option("-t", "--title", dest="title", default=None,
+                      help="The title of the asdoc, as it will appear in Devhelp. Required with --install.")
+    parser.add_option("-p", "--prefix", dest="prefix", default=os.path.expanduser('~/.local'),
+                      help="The prefix where to install devhelp files. Defaults to $HOME/.local")
+    parser.add_option("-a", "--asdoc-path", dest="asdoc_path", default=None,
+                      help="The path to the asdoc html files. Required with --install.")
+    parser.add_option("-v", "--verbose", dest="verbose", default=False, action="store_true",
+                      help="Be verbose.")
+    parser.add_option("-q", "--quiet", dest="verbose", default=False, action="store_false",
+                      help="Be quiet.")
+    parser.add_option("-s", "--dry-run", dest="dry_run", default=False, action="store_true",
+                      help="Do nothing, just show what will be done.")
+
+    (options, args) = parser.parse_args()
+
+    if options.do_install and options.do_uninstall:
+        print 'Choose either to install or uninstall, not both.'
+        parser.print_help()
+        sys.exit(1)
+    if not (options.do_install or options.do_uninstall):
+        print 'Choose either to install or uninstall.'
+        parser.print_help()
+        sys.exit(1)
+    
+    if options.title is None and options.do_install:
+        print 'A title is required.'
+        parser.print_help()
+        sys.exit(1)
+    
+    if options.asdoc_path is None and options.do_install:
+        print 'The path to the asdoc directory is required.'
+        parser.print_help()
+        sys.exit(1)
+    
+    if options.name is None and options.do_install:
+        options.name = os.path.basename(options.asdoc_path)
+    elif options.name is None and options.do_uninstall:
+        print 'The --name option is required with --uninstall.'
+        sys.exit(1)
+    
+    if options.do_install:
+        as2dh.dist.install(options.asdoc_path, options.title, options.name, options.prefix, options.dry_run)
+        sys.exit(0)
+    elif options.do_uninstall:
+        as2dh.dist.uninstall(options.name, options.prefix, options.dry_run)
+        sys.exit(0)
+    else:
+        parser.print_help()
+        sys.exit(0)

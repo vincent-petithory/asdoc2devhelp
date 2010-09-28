@@ -1,0 +1,24 @@
+commit 1f74b0c8030d9b4d8f0aed5b09afcb3dd971a135
+Author: Vincent Petithory <vincent.petithory@gmail.com>
+Date:   Tue Sep 28 19:55:01 2010 +0200
+
+    Initial commit.
+    
+     * as2dh package to install / uninstall asdocs
+     * project files (readme, license, ...)
+     * setup.py and MANIFEST.in for dist.
+
+ .gitignore        |    5 +
+ AUTHORS           |    1 +
+ COPYING           |  675 +++++++++++++++++++++++++++++++++++++++++++++++++++++
+ ChangeLog         |    1 +
+ INSTALL           |    6 +
+ MANIFEST.in       |    9 +
+ NEWS              |    6 +
+ README            |   18 ++
+ TODO              |    4 +
+ as2dh/__init__.py |  269 +++++++++++++++++++++
+ as2dh/dist.py     |   61 +++++
+ bin/as2dh         |   71 ++++++
+ setup.py          |   42 ++++
+ 13 files changed, 1168 insertions(+), 0 deletions(-)

@@ -1,0 +1,9 @@
+include README
+include AUTHORS
+include INSTALL
+include NEWS
+include COPYING
+include ChangeLog
+include MANIFEST.in
+include bin *
+recursive-include as2dh *.py
