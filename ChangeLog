@@ -1,4 +1,880 @@
-commit 1f74b0c8030d9b4d8f0aed5b09afcb3dd971a135
+commit 32d0b471d08f4da8f301e320f53c9ed10890f8d9
+Author: Vincent Petithory <vincent.petithory@gmail.com>
+Date:   Tue Sep 28 19:56:35 2010 +0200
+
+    Add samples to install/uninstall asdocs with both python lib and cmd
+
+ ChangeLog                                          |  881 +++-
+ samples/asdocs/AS3LR/AC_OETags.js                  |  119 +
+ samples/asdocs/AS3LR/ArgumentError.html            |   81 +
+ samples/asdocs/AS3LR/Array.html                    | 1138 ++++
+ samples/asdocs/AS3LR/Boolean.html                  |  121 +
+ samples/asdocs/AS3LR/Class.html                    |  142 +
+ samples/asdocs/AS3LR/Date.html                     | 1235 ++++
+ samples/asdocs/AS3LR/DefinitionError.html          |   53 +
+ samples/asdocs/AS3LR/Error.html                    |  155 +
+ samples/asdocs/AS3LR/EvalError.html                |   54 +
+ samples/asdocs/AS3LR/ExampleInstruct.html          |   50 +
+ samples/asdocs/AS3LR/Function.html                 |  201 +
+ samples/asdocs/AS3LR/Math.html                     |  294 +
+ samples/asdocs/AS3LR/Namespace.html                |  333 ++
+ samples/asdocs/AS3LR/Number.html                   |  179 +
+ samples/asdocs/AS3LR/Object.html                   |  272 +
+ samples/asdocs/AS3LR/QName.html                    |  210 +
+ samples/asdocs/AS3LR/RangeError.html               |   82 +
+ samples/asdocs/AS3LR/ReferenceError.html           |   72 +
+ samples/asdocs/AS3LR/RegExp.html                   |  378 ++
+ samples/asdocs/AS3LR/SecurityError.html            |   82 +
+ samples/asdocs/AS3LR/String.html                   |  637 ++
+ samples/asdocs/AS3LR/SyntaxError.html              |   55 +
+ samples/asdocs/AS3LR/TimedTextTags.html            |  159 +
+ samples/asdocs/AS3LR/TypeError.html                |   84 +
+ samples/asdocs/AS3LR/URIError.html                 |   55 +
+ samples/asdocs/AS3LR/Vector.html                   |  695 +++
+ samples/asdocs/AS3LR/VerifyError.html              |   52 +
+ samples/asdocs/AS3LR/XML.html                      | 1413 +++++
+ samples/asdocs/AS3LR/XMLList.html                  |  309 +
+ .../asdocs/AS3LR/adobe/utils/CustomActions.html    |   89 +
+ samples/asdocs/AS3LR/adobe/utils/XMLUI.html        |   82 +
+ samples/asdocs/AS3LR/adobe/utils/class-list.html   |    3 +
+ .../asdocs/AS3LR/adobe/utils/package-detail.html   |   35 +
+ samples/asdocs/AS3LR/adobe/utils/package.html      |   61 +
+ samples/asdocs/AS3LR/air/net/ServiceMonitor.html   |  234 +
+ samples/asdocs/AS3LR/air/net/SocketMonitor.html    |  129 +
+ samples/asdocs/AS3LR/air/net/URLMonitor.html       |  143 +
+ samples/asdocs/AS3LR/air/net/class-list.html       |    3 +
+ samples/asdocs/AS3LR/air/net/package-detail.html   |   30 +
+ .../AS3LR/air/update/ApplicationUpdater.html       |  603 ++
+ .../AS3LR/air/update/ApplicationUpdaterUI.html     |  659 +++
+ samples/asdocs/AS3LR/air/update/class-list.html    |    3 +
+ .../air/update/events/DownloadErrorEvent.html      |  162 +
+ .../update/events/StatusFileUpdateErrorEvent.html  |  133 +
+ .../air/update/events/StatusFileUpdateEvent.html   |  167 +
+ .../air/update/events/StatusUpdateErrorEvent.html  |  138 +
+ .../AS3LR/air/update/events/StatusUpdateEvent.html |  184 +
+ .../AS3LR/air/update/events/UpdateEvent.html       |  172 +
+ .../asdocs/AS3LR/air/update/events/class-list.html |    3 +
+ .../AS3LR/air/update/events/package-detail.html    |   38 +
+ .../asdocs/AS3LR/air/update/package-detail.html    |   31 +
+ samples/asdocs/AS3LR/all-classes.html              | 1568 +++++
+ samples/asdocs/AS3LR/all-index-A.html              |  496 ++
+ samples/asdocs/AS3LR/all-index-B.html              |  301 +
+ samples/asdocs/AS3LR/all-index-C.html              |  773 +++
+ samples/asdocs/AS3LR/all-index-D.html              |  447 ++
+ samples/asdocs/AS3LR/all-index-E.html              |  393 ++
+ samples/asdocs/AS3LR/all-index-F.html              |  284 +
+ samples/asdocs/AS3LR/all-index-G.html              |  374 ++
+ samples/asdocs/AS3LR/all-index-H.html              |  241 +
+ samples/asdocs/AS3LR/all-index-I.html              |  483 ++
+ samples/asdocs/AS3LR/all-index-J.html              |   48 +
+ samples/asdocs/AS3LR/all-index-K.html              |   67 +
+ samples/asdocs/AS3LR/all-index-L.html              |  321 ++
+ samples/asdocs/AS3LR/all-index-M.html              |  340 ++
+ samples/asdocs/AS3LR/all-index-N.html              |  328 ++
+ samples/asdocs/AS3LR/all-index-O.html              |  151 +
+ samples/asdocs/AS3LR/all-index-P.html              |  327 ++
+ samples/asdocs/AS3LR/all-index-Q.html              |   50 +
+ samples/asdocs/AS3LR/all-index-R.html              |  499 ++
+ samples/asdocs/AS3LR/all-index-S.html              | 1006 ++++
+ samples/asdocs/AS3LR/all-index-Symbols.html        |   27 +
+ samples/asdocs/AS3LR/all-index-T.html              |  483 ++
+ samples/asdocs/AS3LR/all-index-U.html              |  230 +
+ samples/asdocs/AS3LR/all-index-V.html              |  165 +
+ samples/asdocs/AS3LR/all-index-W.html              |  174 +
+ samples/asdocs/AS3LR/all-index-X.html              |   80 +
+ samples/asdocs/AS3LR/all-index-Y.html              |   56 +
+ samples/asdocs/AS3LR/all-index-Z.html              |   38 +
+ samples/asdocs/AS3LR/appendixes.html               |   27 +
+ samples/asdocs/AS3LR/arguments.html                |  124 +
+ samples/asdocs/AS3LR/asdoc.js                      |  326 ++
+ samples/asdocs/AS3LR/charset-codes.html            |  645 +++
+ samples/asdocs/AS3LR/class-list.html               |    3 +
+ samples/asdocs/AS3LR/class-summary.html            |  939 +++
+ samples/asdocs/AS3LR/compilerErrors.html           |  622 ++
+ samples/asdocs/AS3LR/compilerWarnings.html         |  295 +
+ samples/asdocs/AS3LR/content-fonts.css             |  151 +
+ samples/asdocs/AS3LR/content.css                   | 1028 ++++
+ samples/asdocs/AS3LR/conventions.html              |   71 +
+ samples/asdocs/AS3LR/cookies.js                    |   73 +
+ samples/asdocs/AS3LR/currentpage.js                |    3 +
+ samples/asdocs/AS3LR/deprecated.html               |   27 +
+ samples/asdocs/AS3LR/fl/accessibility/AccImpl.html |   39 +
+ .../AS3LR/fl/accessibility/ButtonAccImpl.html      |   67 +
+ .../AS3LR/fl/accessibility/CheckBoxAccImpl.html    |   70 +
+ .../AS3LR/fl/accessibility/ComboBoxAccImpl.html    |   78 +
+ .../AS3LR/fl/accessibility/DataGridAccImpl.html    |   80 +
+ .../AS3LR/fl/accessibility/LabelButtonAccImpl.html |   66 +
+ .../asdocs/AS3LR/fl/accessibility/ListAccImpl.html |   80 +
+ .../AS3LR/fl/accessibility/RadioButtonAccImpl.html |   68 +
+ .../fl/accessibility/SelectableListAccImpl.html    |   37 +
+ .../AS3LR/fl/accessibility/TileListAccImpl.html    |   81 +
+ .../AS3LR/fl/accessibility/UIComponentAccImpl.html |   57 +
+ .../asdocs/AS3LR/fl/accessibility/class-list.html  |    3 +
+ .../AS3LR/fl/accessibility/package-detail.html     |   49 +
+ .../asdocs/AS3LR/fl/containers/BaseScrollPane.html |  516 ++
+ samples/asdocs/AS3LR/fl/containers/ScrollPane.html |  955 +++
+ samples/asdocs/AS3LR/fl/containers/UILoader.html   |  842 +++
+ samples/asdocs/AS3LR/fl/containers/class-list.html |    3 +
+ .../asdocs/AS3LR/fl/containers/package-detail.html |   33 +
+ samples/asdocs/AS3LR/fl/controls/BaseButton.html   |  478 ++
+ samples/asdocs/AS3LR/fl/controls/Button.html       |  366 ++
+ .../AS3LR/fl/controls/ButtonLabelPlacement.html    |  116 +
+ samples/asdocs/AS3LR/fl/controls/CheckBox.html     |  364 ++
+ samples/asdocs/AS3LR/fl/controls/ColorPicker.html  |  652 +++
+ samples/asdocs/AS3LR/fl/controls/ComboBox.html     | 1617 ++++++
+ samples/asdocs/AS3LR/fl/controls/DataGrid.html     | 1489 +++++
+ samples/asdocs/AS3LR/fl/controls/Label.html        |  517 ++
+ samples/asdocs/AS3LR/fl/controls/LabelButton.html  |  560 ++
+ samples/asdocs/AS3LR/fl/controls/List.html         |  619 ++
+ .../asdocs/AS3LR/fl/controls/NumericStepper.html   |  447 ++
+ samples/asdocs/AS3LR/fl/controls/ProgressBar.html  |  588 ++
+ .../AS3LR/fl/controls/ProgressBarDirection.html    |   48 +
+ .../asdocs/AS3LR/fl/controls/ProgressBarMode.html  |  169 +
+ samples/asdocs/AS3LR/fl/controls/RadioButton.html  |  541 ++
+ .../asdocs/AS3LR/fl/controls/RadioButtonGroup.html |  315 +
+ samples/asdocs/AS3LR/fl/controls/ScrollBar.html    |  409 ++
+ .../AS3LR/fl/controls/ScrollBarDirection.html      |   47 +
+ samples/asdocs/AS3LR/fl/controls/ScrollPolicy.html |   57 +
+ .../asdocs/AS3LR/fl/controls/SelectableList.html   |  946 +++
+ samples/asdocs/AS3LR/fl/controls/Slider.html       |  555 ++
+ .../asdocs/AS3LR/fl/controls/SliderDirection.html  |   67 +
+ samples/asdocs/AS3LR/fl/controls/TextArea.html     |  857 +++
+ samples/asdocs/AS3LR/fl/controls/TextInput.html    |  841 +++
+ samples/asdocs/AS3LR/fl/controls/TileList.html     |  857 +++
+ samples/asdocs/AS3LR/fl/controls/UIScrollBar.html  |  371 ++
+ samples/asdocs/AS3LR/fl/controls/class-list.html   |    3 +
+ .../dataGridClasses/DataGridCellEditor.html        |  410 ++
+ .../controls/dataGridClasses/DataGridColumn.html   |  586 ++
+ .../controls/dataGridClasses/HeaderRenderer.html   |  339 ++
+ .../fl/controls/dataGridClasses/class-list.html    |    3 +
+ .../controls/dataGridClasses/package-detail.html   |   32 +
+ .../fl/controls/listClasses/CellRenderer.html      |  403 ++
+ .../fl/controls/listClasses/ICellRenderer.html     |  168 +
+ .../AS3LR/fl/controls/listClasses/ImageCell.html   |  371 ++
+ .../AS3LR/fl/controls/listClasses/ListData.html    |  140 +
+ .../fl/controls/listClasses/TileListData.html      |  158 +
+ .../AS3LR/fl/controls/listClasses/class-list.html  |    3 +
+ .../fl/controls/listClasses/package-detail.html    |   37 +
+ .../asdocs/AS3LR/fl/controls/package-detail.html   |   80 +
+ .../progressBarClasses/IndeterminateBar.html       |  307 +
+ .../fl/controls/progressBarClasses/class-list.html |    3 +
+ .../progressBarClasses/package-detail.html         |   29 +
+ samples/asdocs/AS3LR/fl/core/InvalidationType.html |  108 +
+ samples/asdocs/AS3LR/fl/core/UIComponent.html      |  753 +++
+ samples/asdocs/AS3LR/fl/core/class-list.html       |    3 +
+ samples/asdocs/AS3LR/fl/core/package-detail.html   |   32 +
+ samples/asdocs/AS3LR/fl/data/DataProvider.html     |  524 ++
+ .../asdocs/AS3LR/fl/data/SimpleCollectionItem.html |  103 +
+ .../AS3LR/fl/data/TileListCollectionItem.html      |   58 +
+ samples/asdocs/AS3LR/fl/data/class-list.html       |    3 +
+ samples/asdocs/AS3LR/fl/data/package-detail.html   |   34 +
+ .../asdocs/AS3LR/fl/events/ColorPickerEvent.html   |  195 +
+ samples/asdocs/AS3LR/fl/events/ComponentEvent.html |  386 ++
+ .../asdocs/AS3LR/fl/events/DataChangeEvent.html    |  248 +
+ samples/asdocs/AS3LR/fl/events/DataChangeType.html |   77 +
+ samples/asdocs/AS3LR/fl/events/DataGridEvent.html  |  432 ++
+ .../AS3LR/fl/events/DataGridEventReason.html       |   85 +
+ .../AS3LR/fl/events/InteractionInputType.html      |   84 +
+ samples/asdocs/AS3LR/fl/events/ListEvent.html      |  277 +
+ samples/asdocs/AS3LR/fl/events/ScrollEvent.html    |  191 +
+ samples/asdocs/AS3LR/fl/events/SliderEvent.html    |  245 +
+ .../AS3LR/fl/events/SliderEventClickTarget.html    |   78 +
+ samples/asdocs/AS3LR/fl/events/class-list.html     |    3 +
+ samples/asdocs/AS3LR/fl/events/package-detail.html |   44 +
+ samples/asdocs/AS3LR/fl/ik/IKArmature.html         |  143 +
+ samples/asdocs/AS3LR/fl/ik/IKBone.html             |   99 +
+ samples/asdocs/AS3LR/fl/ik/IKEvent.html            |  155 +
+ samples/asdocs/AS3LR/fl/ik/IKJoint.html            |  177 +
+ samples/asdocs/AS3LR/fl/ik/IKManager.html          |  186 +
+ samples/asdocs/AS3LR/fl/ik/IKMover.html            |  129 +
+ samples/asdocs/AS3LR/fl/ik/class-list.html         |    3 +
+ samples/asdocs/AS3LR/fl/ik/package-detail.html     |   39 +
+ samples/asdocs/AS3LR/fl/lang/Locale.html           |  361 ++
+ samples/asdocs/AS3LR/fl/lang/class-list.html       |    3 +
+ samples/asdocs/AS3LR/fl/lang/package-detail.html   |   28 +
+ .../AS3LR/fl/livepreview/LivePreviewParent.html    |  263 +
+ .../asdocs/AS3LR/fl/livepreview/class-list.html    |    3 +
+ .../AS3LR/fl/livepreview/package-detail.html       |   30 +
+ samples/asdocs/AS3LR/fl/managers/FocusManager.html |  220 +
+ .../asdocs/AS3LR/fl/managers/IFocusManager.html    |  166 +
+ .../AS3LR/fl/managers/IFocusManagerComponent.html  |  126 +
+ .../AS3LR/fl/managers/IFocusManagerGroup.html      |   48 +
+ samples/asdocs/AS3LR/fl/managers/StyleManager.html |  294 +
+ samples/asdocs/AS3LR/fl/managers/class-list.html   |    3 +
+ .../asdocs/AS3LR/fl/managers/package-detail.html   |   38 +
+ samples/asdocs/AS3LR/fl/motion/AdjustColor.html    |   64 +
+ samples/asdocs/AS3LR/fl/motion/Animator.html       |  105 +
+ samples/asdocs/AS3LR/fl/motion/Animator3D.html     |   99 +
+ samples/asdocs/AS3LR/fl/motion/AnimatorBase.html   |  256 +
+ .../asdocs/AS3LR/fl/motion/AnimatorFactory.html    |   58 +
+ .../asdocs/AS3LR/fl/motion/AnimatorFactory3D.html  |   59 +
+ .../AS3LR/fl/motion/AnimatorFactoryBase.html       |   93 +
+ samples/asdocs/AS3LR/fl/motion/BezierEase.html     |   92 +
+ samples/asdocs/AS3LR/fl/motion/BezierSegment.html  |  158 +
+ samples/asdocs/AS3LR/fl/motion/Color.html          |  125 +
+ samples/asdocs/AS3LR/fl/motion/ColorMatrix.html    |   75 +
+ samples/asdocs/AS3LR/fl/motion/CustomEase.html     |   91 +
+ samples/asdocs/AS3LR/fl/motion/DynamicMatrix.html  |  111 +
+ samples/asdocs/AS3LR/fl/motion/FunctionEase.html   |  113 +
+ samples/asdocs/AS3LR/fl/motion/ITween.html         |   59 +
+ samples/asdocs/AS3LR/fl/motion/Keyframe.html       |  113 +
+ samples/asdocs/AS3LR/fl/motion/KeyframeBase.html   |  211 +
+ .../asdocs/AS3LR/fl/motion/MatrixTransformer.html  |  201 +
+ samples/asdocs/AS3LR/fl/motion/Motion.html         |  119 +
+ samples/asdocs/AS3LR/fl/motion/MotionBase.html     |  196 +
+ samples/asdocs/AS3LR/fl/motion/MotionEvent.html    |  174 +
+ .../asdocs/AS3LR/fl/motion/RotateDirection.html    |   55 +
+ samples/asdocs/AS3LR/fl/motion/SimpleEase.html     |  118 +
+ samples/asdocs/AS3LR/fl/motion/Source.html         |  103 +
+ samples/asdocs/AS3LR/fl/motion/Tweenables.html     |   71 +
+ samples/asdocs/AS3LR/fl/motion/class-list.html     |    3 +
+ samples/asdocs/AS3LR/fl/motion/easing/Back.html    |  104 +
+ samples/asdocs/AS3LR/fl/motion/easing/Bounce.html  |   88 +
+ .../asdocs/AS3LR/fl/motion/easing/Circular.html    |   90 +
+ samples/asdocs/AS3LR/fl/motion/easing/Cubic.html   |   90 +
+ samples/asdocs/AS3LR/fl/motion/easing/Elastic.html |  100 +
+ .../asdocs/AS3LR/fl/motion/easing/Exponential.html |   93 +
+ samples/asdocs/AS3LR/fl/motion/easing/Linear.html  |  103 +
+ .../asdocs/AS3LR/fl/motion/easing/Quadratic.html   |   91 +
+ samples/asdocs/AS3LR/fl/motion/easing/Quartic.html |   90 +
+ samples/asdocs/AS3LR/fl/motion/easing/Quintic.html |   90 +
+ samples/asdocs/AS3LR/fl/motion/easing/Sine.html    |   90 +
+ .../asdocs/AS3LR/fl/motion/easing/class-list.html  |    3 +
+ .../AS3LR/fl/motion/easing/package-detail.html     |   51 +
+ samples/asdocs/AS3LR/fl/motion/package-detail.html |   61 +
+ samples/asdocs/AS3LR/fl/transitions/Blinds.html    |   68 +
+ samples/asdocs/AS3LR/fl/transitions/Fade.html      |   59 +
+ samples/asdocs/AS3LR/fl/transitions/Fly.html       |   65 +
+ samples/asdocs/AS3LR/fl/transitions/Iris.html      |   75 +
+ samples/asdocs/AS3LR/fl/transitions/Photo.html     |   60 +
+ .../asdocs/AS3LR/fl/transitions/PixelDissolve.html |   68 +
+ samples/asdocs/AS3LR/fl/transitions/Rotate.html    |   67 +
+ samples/asdocs/AS3LR/fl/transitions/Squeeze.html   |   64 +
+ .../asdocs/AS3LR/fl/transitions/Transition.html    |   63 +
+ .../AS3LR/fl/transitions/TransitionManager.html    |  127 +
+ samples/asdocs/AS3LR/fl/transitions/Tween.html     |  295 +
+ .../asdocs/AS3LR/fl/transitions/TweenEvent.html    |  191 +
+ samples/asdocs/AS3LR/fl/transitions/Wipe.html      |   66 +
+ samples/asdocs/AS3LR/fl/transitions/Zoom.html      |   60 +
+ .../asdocs/AS3LR/fl/transitions/class-list.html    |    3 +
+ .../asdocs/AS3LR/fl/transitions/easing/Back.html   |  156 +
+ .../asdocs/AS3LR/fl/transitions/easing/Bounce.html |  142 +
+ .../AS3LR/fl/transitions/easing/Elastic.html       |  154 +
+ .../asdocs/AS3LR/fl/transitions/easing/None.html   |  159 +
+ .../AS3LR/fl/transitions/easing/Regular.html       |  146 +
+ .../asdocs/AS3LR/fl/transitions/easing/Strong.html |  145 +
+ .../AS3LR/fl/transitions/easing/class-list.html    |    3 +
+ .../fl/transitions/easing/package-detail.html      |   41 +
+ .../AS3LR/fl/transitions/package-detail.html       |   46 +
+ samples/asdocs/AS3LR/fl/video/AutoLayoutEvent.html |  186 +
+ .../asdocs/AS3LR/fl/video/CaptionChangeEvent.html  |  150 +
+ .../asdocs/AS3LR/fl/video/CaptionTargetEvent.html  |  147 +
+ samples/asdocs/AS3LR/fl/video/CuePointType.html    |   95 +
+ samples/asdocs/AS3LR/fl/video/FLVPlayback.html     | 2237 +++++++
+ .../AS3LR/fl/video/FLVPlaybackCaptioning.html      |  574 ++
+ samples/asdocs/AS3LR/fl/video/INCManager.html      |  194 +
+ samples/asdocs/AS3LR/fl/video/IVPEvent.html        |   47 +
+ samples/asdocs/AS3LR/fl/video/LayoutEvent.html     |  171 +
+ samples/asdocs/AS3LR/fl/video/MetadataEvent.html   |  153 +
+ samples/asdocs/AS3LR/fl/video/NCManager.html       |  291 +
+ samples/asdocs/AS3LR/fl/video/NCManagerNative.html |  123 +
+ samples/asdocs/AS3LR/fl/video/SkinErrorEvent.html  |  140 +
+ samples/asdocs/AS3LR/fl/video/SoundEvent.html      |  137 +
+ samples/asdocs/AS3LR/fl/video/VideoAlign.html      |   76 +
+ samples/asdocs/AS3LR/fl/video/VideoError.html      |  159 +
+ samples/asdocs/AS3LR/fl/video/VideoEvent.html      |  325 ++
+ .../AS3LR/fl/video/VideoPlaybackErrorEvent.html    |  102 +
+ samples/asdocs/AS3LR/fl/video/VideoPlayer.html     | 1123 ++++
+ .../asdocs/AS3LR/fl/video/VideoProgressEvent.html  |  142 +
+ samples/asdocs/AS3LR/fl/video/VideoScaleMode.html  |   93 +
+ samples/asdocs/AS3LR/fl/video/VideoState.html      |  146 +
+ samples/asdocs/AS3LR/fl/video/class-list.html      |    3 +
+ samples/asdocs/AS3LR/fl/video/package-detail.html  |   71 +
+ .../AS3LR/flash/accessibility/Accessibility.html   |  232 +
+ .../accessibility/AccessibilityProperties.html     |  270 +
+ .../AS3LR/flash/accessibility/class-list.html      |    3 +
+ .../AS3LR/flash/accessibility/package-detail.html  |   30 +
+ .../AS3LR/flash/data/EncryptedLocalStore.html      |  128 +
+ .../asdocs/AS3LR/flash/data/SQLCollationType.html  |   65 +
+ .../AS3LR/flash/data/SQLColumnNameStyle.html       |   81 +
+ .../asdocs/AS3LR/flash/data/SQLColumnSchema.html   |  108 +
+ samples/asdocs/AS3LR/flash/data/SQLConnection.html | 1276 ++++
+ .../asdocs/AS3LR/flash/data/SQLIndexSchema.html    |   74 +
+ samples/asdocs/AS3LR/flash/data/SQLMode.html       |   63 +
+ samples/asdocs/AS3LR/flash/data/SQLResult.html     |  140 +
+ samples/asdocs/AS3LR/flash/data/SQLSchema.html     |   90 +
+ .../asdocs/AS3LR/flash/data/SQLSchemaResult.html   |  100 +
+ samples/asdocs/AS3LR/flash/data/SQLStatement.html  |  605 ++
+ .../asdocs/AS3LR/flash/data/SQLTableSchema.html    |   76 +
+ .../AS3LR/flash/data/SQLTransactionLockType.html   |   69 +
+ .../asdocs/AS3LR/flash/data/SQLTriggerSchema.html  |   75 +
+ samples/asdocs/AS3LR/flash/data/SQLViewSchema.html |   70 +
+ samples/asdocs/AS3LR/flash/data/class-list.html    |    3 +
+ .../asdocs/AS3LR/flash/data/package-detail.html    |   59 +
+ samples/asdocs/AS3LR/flash/desktop/Clipboard.html  |  373 ++
+ .../AS3LR/flash/desktop/ClipboardFormats.html      |   64 +
+ .../AS3LR/flash/desktop/ClipboardTransferMode.html |   59 +
+ samples/asdocs/AS3LR/flash/desktop/DockIcon.html   |  256 +
+ samples/asdocs/AS3LR/flash/desktop/Icon.html       |   85 +
+ .../AS3LR/flash/desktop/InteractiveIcon.html       |  109 +
+ .../AS3LR/flash/desktop/InvokeEventReason.html     |   48 +
+ .../AS3LR/flash/desktop/NativeApplication.html     |  630 ++
+ .../AS3LR/flash/desktop/NativeDragActions.html     |   61 +
+ .../AS3LR/flash/desktop/NativeDragManager.html     |  262 +
+ .../AS3LR/flash/desktop/NativeDragOptions.html     |   65 +
+ .../AS3LR/flash/desktop/NotificationType.html      |   49 +
+ .../asdocs/AS3LR/flash/desktop/SystemTrayIcon.html |  210 +
+ samples/asdocs/AS3LR/flash/desktop/Updater.html    |  111 +
+ samples/asdocs/AS3LR/flash/desktop/class-list.html |    3 +
+ .../asdocs/AS3LR/flash/desktop/package-detail.html |   48 +
+ samples/asdocs/AS3LR/flash/display/AVM1Movie.html  |  123 +
+ .../AS3LR/flash/display/ActionScriptVersion.html   |   51 +
+ samples/asdocs/AS3LR/flash/display/Bitmap.html     |  255 +
+ samples/asdocs/AS3LR/flash/display/BitmapData.html | 1548 +++++
+ .../AS3LR/flash/display/BitmapDataChannel.html     |   70 +
+ samples/asdocs/AS3LR/flash/display/BlendMode.html  |  167 +
+ samples/asdocs/AS3LR/flash/display/CapsStyle.html  |  141 +
+ .../AS3LR/flash/display/ColorCorrection.html       |   53 +
+ .../flash/display/ColorCorrectionSupport.html      |   51 +
+ .../asdocs/AS3LR/flash/display/DisplayObject.html  | 1909 ++++++
+ .../flash/display/DisplayObjectContainer.html      |  791 +++
+ .../asdocs/AS3LR/flash/display/FocusDirection.html |   53 +
+ samples/asdocs/AS3LR/flash/display/FrameLabel.html |   49 +
+ .../asdocs/AS3LR/flash/display/GradientType.html   |   48 +
+ samples/asdocs/AS3LR/flash/display/Graphics.html   | 1203 ++++
+ .../AS3LR/flash/display/GraphicsBitmapFill.html    |  109 +
+ .../AS3LR/flash/display/GraphicsEndFill.html       |   50 +
+ .../AS3LR/flash/display/GraphicsGradientFill.html  |  190 +
+ .../asdocs/AS3LR/flash/display/GraphicsPath.html   |  118 +
+ .../AS3LR/flash/display/GraphicsPathCommand.html   |   85 +
+ .../AS3LR/flash/display/GraphicsPathWinding.html   |   64 +
+ .../AS3LR/flash/display/GraphicsShaderFill.html    |   85 +
+ .../AS3LR/flash/display/GraphicsSolidFill.html     |   62 +
+ .../asdocs/AS3LR/flash/display/GraphicsStroke.html |  253 +
+ .../AS3LR/flash/display/GraphicsTrianglePath.html  |  100 +
+ .../AS3LR/flash/display/IBitmapDrawable.html       |   32 +
+ .../asdocs/AS3LR/flash/display/IGraphicsData.html  |   33 +
+ .../asdocs/AS3LR/flash/display/IGraphicsFill.html  |   31 +
+ .../asdocs/AS3LR/flash/display/IGraphicsPath.html  |   31 +
+ .../AS3LR/flash/display/IGraphicsStroke.html       |   31 +
+ .../AS3LR/flash/display/InteractiveObject.html     |  933 +++
+ .../AS3LR/flash/display/InterpolationMethod.html   |   62 +
+ samples/asdocs/AS3LR/flash/display/JointStyle.html |  146 +
+ .../asdocs/AS3LR/flash/display/LineScaleMode.html  |   75 +
+ samples/asdocs/AS3LR/flash/display/Loader.html     |  515 ++
+ samples/asdocs/AS3LR/flash/display/LoaderInfo.html |  460 ++
+ samples/asdocs/AS3LR/flash/display/MorphShape.html |  103 +
+ samples/asdocs/AS3LR/flash/display/MovieClip.html  |  481 ++
+ samples/asdocs/AS3LR/flash/display/NativeMenu.html |  291 +
+ .../asdocs/AS3LR/flash/display/NativeMenuItem.html |  224 +
+ .../asdocs/AS3LR/flash/display/NativeWindow.html   | 1436 +++++
+ .../flash/display/NativeWindowDisplayState.html    |   55 +
+ .../flash/display/NativeWindowInitOptions.html     |  160 +
+ .../AS3LR/flash/display/NativeWindowResize.html    |   80 +
+ .../flash/display/NativeWindowSystemChrome.html    |   57 +
+ .../AS3LR/flash/display/NativeWindowType.html      |   56 +
+ .../asdocs/AS3LR/flash/display/PixelSnapping.html  |   65 +
+ samples/asdocs/AS3LR/flash/display/SWFVersion.html |   83 +
+ samples/asdocs/AS3LR/flash/display/Scene.html      |   57 +
+ samples/asdocs/AS3LR/flash/display/Screen.html     |  258 +
+ samples/asdocs/AS3LR/flash/display/Shader.html     |  235 +
+ samples/asdocs/AS3LR/flash/display/ShaderData.html |  200 +
+ .../asdocs/AS3LR/flash/display/ShaderInput.html    |  129 +
+ samples/asdocs/AS3LR/flash/display/ShaderJob.html  |  241 +
+ .../AS3LR/flash/display/ShaderParameter.html       |  183 +
+ .../AS3LR/flash/display/ShaderParameterType.html   |  192 +
+ .../AS3LR/flash/display/ShaderPrecision.html       |  110 +
+ samples/asdocs/AS3LR/flash/display/Shape.html      |  186 +
+ .../asdocs/AS3LR/flash/display/SimpleButton.html   |  264 +
+ .../asdocs/AS3LR/flash/display/SpreadMethod.html   |   66 +
+ samples/asdocs/AS3LR/flash/display/Sprite.html     |  524 ++
+ samples/asdocs/AS3LR/flash/display/Stage.html      | 1472 +++++
+ samples/asdocs/AS3LR/flash/display/StageAlign.html |   63 +
+ .../AS3LR/flash/display/StageDisplayState.html     |   52 +
+ .../asdocs/AS3LR/flash/display/StageQuality.html   |   63 +
+ .../asdocs/AS3LR/flash/display/StageScaleMode.html |   60 +
+ .../AS3LR/flash/display/TriangleCulling.html       |   68 +
+ samples/asdocs/AS3LR/flash/display/class-list.html |    3 +
+ .../asdocs/AS3LR/flash/display/package-detail.html |  136 +
+ .../asdocs/AS3LR/flash/errors/DRMManagerError.html |   68 +
+ samples/asdocs/AS3LR/flash/errors/EOFError.html    |   90 +
+ samples/asdocs/AS3LR/flash/errors/IOError.html     |   79 +
+ .../AS3LR/flash/errors/IllegalOperationError.html  |   88 +
+ .../asdocs/AS3LR/flash/errors/InvalidSWFError.html |   52 +
+ samples/asdocs/AS3LR/flash/errors/MemoryError.html |   86 +
+ samples/asdocs/AS3LR/flash/errors/SQLError.html    |  152 +
+ .../AS3LR/flash/errors/SQLErrorOperation.html      |   98 +
+ .../AS3LR/flash/errors/ScriptTimeoutError.html     |   89 +
+ .../AS3LR/flash/errors/StackOverflowError.html     |   85 +
+ samples/asdocs/AS3LR/flash/errors/class-list.html  |    3 +
+ .../asdocs/AS3LR/flash/errors/package-detail.html  |   52 +
+ .../asdocs/AS3LR/flash/events/ActivityEvent.html   |  170 +
+ .../asdocs/AS3LR/flash/events/AsyncErrorEvent.html |  165 +
+ .../AS3LR/flash/events/BrowserInvokeEvent.html     |  224 +
+ .../AS3LR/flash/events/ContextMenuEvent.html       |  265 +
+ .../AS3LR/flash/events/DRMAuthenticateEvent.html   |  265 +
+ .../events/DRMAuthenticationCompleteEvent.html     |  171 +
+ .../flash/events/DRMAuthenticationErrorEvent.html  |  136 +
+ .../asdocs/AS3LR/flash/events/DRMErrorEvent.html   |  326 ++
+ .../asdocs/AS3LR/flash/events/DRMStatusEvent.html  |  203 +
+ samples/asdocs/AS3LR/flash/events/DataEvent.html   |  194 +
+ samples/asdocs/AS3LR/flash/events/ErrorEvent.html  |  194 +
+ samples/asdocs/AS3LR/flash/events/Event.html       |  820 +++
+ .../asdocs/AS3LR/flash/events/EventDispatcher.html |  295 +
+ samples/asdocs/AS3LR/flash/events/EventPhase.html  |   47 +
+ .../asdocs/AS3LR/flash/events/FileListEvent.html   |  149 +
+ samples/asdocs/AS3LR/flash/events/FocusEvent.html  |  334 ++
+ .../asdocs/AS3LR/flash/events/FullScreenEvent.html |  151 +
+ .../events/HTMLUncaughtScriptExceptionEvent.html   |  158 +
+ .../asdocs/AS3LR/flash/events/HTTPStatusEvent.html |  222 +
+ .../AS3LR/flash/events/IEventDispatcher.html       |  190 +
+ samples/asdocs/AS3LR/flash/events/IMEEvent.html    |  139 +
+ .../asdocs/AS3LR/flash/events/IOErrorEvent.html    |  173 +
+ samples/asdocs/AS3LR/flash/events/InvokeEvent.html |  194 +
+ .../asdocs/AS3LR/flash/events/KeyboardEvent.html   |  272 +
+ samples/asdocs/AS3LR/flash/events/MouseEvent.html  |  619 ++
+ .../asdocs/AS3LR/flash/events/NativeDragEvent.html |  307 +
+ .../flash/events/NativeWindowBoundsEvent.html      |  198 +
+ .../events/NativeWindowDisplayStateEvent.html      |  177 +
+ .../asdocs/AS3LR/flash/events/NetStatusEvent.html  |  233 +
+ .../AS3LR/flash/events/OutputProgressEvent.html    |  149 +
+ .../asdocs/AS3LR/flash/events/ProgressEvent.html   |  222 +
+ .../asdocs/AS3LR/flash/events/SQLErrorEvent.html   |  173 +
+ samples/asdocs/AS3LR/flash/events/SQLEvent.html    |  306 +
+ .../asdocs/AS3LR/flash/events/SQLUpdateEvent.html  |  210 +
+ .../asdocs/AS3LR/flash/events/SampleDataEvent.html |  190 +
+ .../AS3LR/flash/events/ScreenMouseEvent.html       |  248 +
+ .../AS3LR/flash/events/SecurityErrorEvent.html     |  176 +
+ samples/asdocs/AS3LR/flash/events/ShaderEvent.html |  188 +
+ samples/asdocs/AS3LR/flash/events/StatusEvent.html |  141 +
+ samples/asdocs/AS3LR/flash/events/SyncEvent.html   |  150 +
+ samples/asdocs/AS3LR/flash/events/TextEvent.html   |  439 ++
+ samples/asdocs/AS3LR/flash/events/TimerEvent.html  |  173 +
+ samples/asdocs/AS3LR/flash/events/class-list.html  |    3 +
+ .../asdocs/AS3LR/flash/events/package-detail.html  |  103 +
+ .../AS3LR/flash/external/ExternalInterface.html    |  416 ++
+ .../asdocs/AS3LR/flash/external/class-list.html    |    3 +
+ .../AS3LR/flash/external/package-detail.html       |   30 +
+ samples/asdocs/AS3LR/flash/filesystem/File.html    | 1288 +++++
+ .../asdocs/AS3LR/flash/filesystem/FileMode.html    |   84 +
+ .../asdocs/AS3LR/flash/filesystem/FileStream.html  |  899 +++
+ .../asdocs/AS3LR/flash/filesystem/class-list.html  |    3 +
+ .../AS3LR/flash/filesystem/package-detail.html     |   31 +
+ .../asdocs/AS3LR/flash/filters/BevelFilter.html    |  259 +
+ .../asdocs/AS3LR/flash/filters/BitmapFilter.html   |   98 +
+ .../AS3LR/flash/filters/BitmapFilterQuality.html   |  105 +
+ .../AS3LR/flash/filters/BitmapFilterType.html      |  104 +
+ samples/asdocs/AS3LR/flash/filters/BlurFilter.html |  170 +
+ .../AS3LR/flash/filters/ColorMatrixFilter.html     |  217 +
+ .../AS3LR/flash/filters/ConvolutionFilter.html     |  346 ++
+ .../AS3LR/flash/filters/DisplacementMapFilter.html |  254 +
+ .../flash/filters/DisplacementMapFilterMode.html   |   65 +
+ .../AS3LR/flash/filters/DropShadowFilter.html      |  240 +
+ samples/asdocs/AS3LR/flash/filters/GlowFilter.html |  213 +
+ .../AS3LR/flash/filters/GradientBevelFilter.html   |  317 +
+ .../AS3LR/flash/filters/GradientGlowFilter.html    |  342 ++
+ .../asdocs/AS3LR/flash/filters/ShaderFilter.html   |  222 +
+ samples/asdocs/AS3LR/flash/filters/class-list.html |    3 +
+ .../asdocs/AS3LR/flash/filters/package-detail.html |   46 +
+ .../asdocs/AS3LR/flash/geom/ColorTransform.html    |  213 +
+ samples/asdocs/AS3LR/flash/geom/Matrix.html        |  592 ++
+ samples/asdocs/AS3LR/flash/geom/Matrix3D.html      |  894 +++
+ samples/asdocs/AS3LR/flash/geom/Orientation3D.html |   81 +
+ .../AS3LR/flash/geom/PerspectiveProjection.html    |  126 +
+ samples/asdocs/AS3LR/flash/geom/Point.html         |  197 +
+ samples/asdocs/AS3LR/flash/geom/Rectangle.html     |  403 ++
+ samples/asdocs/AS3LR/flash/geom/Transform.html     |  217 +
+ samples/asdocs/AS3LR/flash/geom/Utils3D.html       |  128 +
+ samples/asdocs/AS3LR/flash/geom/Vector3D.html      |  361 ++
+ samples/asdocs/AS3LR/flash/geom/class-list.html    |    3 +
+ .../asdocs/AS3LR/flash/geom/package-detail.html    |   47 +
+ .../asdocs/AS3LR/flash/html/HTMLHistoryItem.html   |   56 +
+ samples/asdocs/AS3LR/flash/html/HTMLHost.html      |  351 ++
+ samples/asdocs/AS3LR/flash/html/HTMLLoader.html    |  686 +++
+ .../asdocs/AS3LR/flash/html/HTMLPDFCapability.html |   88 +
+ .../AS3LR/flash/html/HTMLWindowCreateOptions.html  |  133 +
+ samples/asdocs/AS3LR/flash/html/class-list.html    |    3 +
+ .../asdocs/AS3LR/flash/html/package-detail.html    |   38 +
+ samples/asdocs/AS3LR/flash/media/Camera.html       |  745 +++
+ samples/asdocs/AS3LR/flash/media/ID3Info.html      |   63 +
+ samples/asdocs/AS3LR/flash/media/Microphone.html   |  386 ++
+ samples/asdocs/AS3LR/flash/media/Sound.html        |  881 +++
+ samples/asdocs/AS3LR/flash/media/SoundChannel.html |  308 +
+ samples/asdocs/AS3LR/flash/media/SoundCodec.html   |   49 +
+ .../AS3LR/flash/media/SoundLoaderContext.html      |  211 +
+ samples/asdocs/AS3LR/flash/media/SoundMixer.html   |  318 +
+ .../asdocs/AS3LR/flash/media/SoundTransform.html   |  189 +
+ samples/asdocs/AS3LR/flash/media/Video.html        |  343 ++
+ samples/asdocs/AS3LR/flash/media/class-list.html   |    3 +
+ .../asdocs/AS3LR/flash/media/package-detail.html   |   43 +
+ samples/asdocs/AS3LR/flash/media/package.html      |   31 +
+ samples/asdocs/AS3LR/flash/net/FileFilter.html     |  128 +
+ samples/asdocs/AS3LR/flash/net/FileReference.html  | 1430 +++++
+ .../asdocs/AS3LR/flash/net/FileReferenceList.html  |  313 +
+ .../AS3LR/flash/net/IDynamicPropertyOutput.html    |   48 +
+ .../AS3LR/flash/net/IDynamicPropertyWriter.html    |   44 +
+ .../asdocs/AS3LR/flash/net/LocalConnection.html    |  624 ++
+ samples/asdocs/AS3LR/flash/net/NetConnection.html  |  559 ++
+ samples/asdocs/AS3LR/flash/net/NetStream.html      | 1727 ++++++
+ samples/asdocs/AS3LR/flash/net/NetStreamInfo.html  |  158 +
+ .../AS3LR/flash/net/NetStreamPlayOptions.html      |  106 +
+ .../AS3LR/flash/net/NetStreamPlayTransitions.html  |  107 +
+ samples/asdocs/AS3LR/flash/net/ObjectEncoding.html |  103 +
+ samples/asdocs/AS3LR/flash/net/Responder.html      |   55 +
+ samples/asdocs/AS3LR/flash/net/SharedObject.html   |  926 +++
+ .../AS3LR/flash/net/SharedObjectFlushStatus.html   |   47 +
+ samples/asdocs/AS3LR/flash/net/Socket.html         |  653 +++
+ samples/asdocs/AS3LR/flash/net/URLLoader.html      |  564 ++
+ .../AS3LR/flash/net/URLLoaderDataFormat.html       |  128 +
+ samples/asdocs/AS3LR/flash/net/URLRequest.html     |  511 ++
+ .../asdocs/AS3LR/flash/net/URLRequestDefaults.html |  150 +
+ .../asdocs/AS3LR/flash/net/URLRequestHeader.html   |  170 +
+ .../asdocs/AS3LR/flash/net/URLRequestMethod.html   |  121 +
+ samples/asdocs/AS3LR/flash/net/URLStream.html      |  609 ++
+ samples/asdocs/AS3LR/flash/net/URLVariables.html   |  104 +
+ samples/asdocs/AS3LR/flash/net/XMLSocket.html      |  333 ++
+ samples/asdocs/AS3LR/flash/net/class-list.html     |    3 +
+ .../AS3LR/flash/net/drm/AuthenticationMethod.html  |   49 +
+ .../asdocs/AS3LR/flash/net/drm/DRMContentData.html |   84 +
+ samples/asdocs/AS3LR/flash/net/drm/DRMManager.html |  171 +
+ .../AS3LR/flash/net/drm/DRMPlaybackTimeWindow.html |   61 +
+ samples/asdocs/AS3LR/flash/net/drm/DRMVoucher.html |   80 +
+ .../AS3LR/flash/net/drm/LoadVoucherSetting.html    |   53 +
+ samples/asdocs/AS3LR/flash/net/drm/class-list.html |    3 +
+ .../asdocs/AS3LR/flash/net/drm/package-detail.html |   39 +
+ samples/asdocs/AS3LR/flash/net/package-detail.html |   94 +
+ samples/asdocs/AS3LR/flash/net/package.html        |  299 +
+ samples/asdocs/AS3LR/flash/printing/PrintJob.html  |  445 ++
+ .../AS3LR/flash/printing/PrintJobOptions.html      |  154 +
+ .../AS3LR/flash/printing/PrintJobOrientation.html  |   50 +
+ .../asdocs/AS3LR/flash/printing/class-list.html    |    3 +
+ .../AS3LR/flash/printing/package-detail.html       |   32 +
+ .../asdocs/AS3LR/flash/profiler/class-list.html    |    3 +
+ .../AS3LR/flash/profiler/package-detail.html       |   28 +
+ samples/asdocs/AS3LR/flash/profiler/package.html   |   38 +
+ .../AS3LR/flash/sampler/DeleteObjectSample.html    |  114 +
+ .../AS3LR/flash/sampler/NewObjectSample.html       |  115 +
+ samples/asdocs/AS3LR/flash/sampler/Sample.html     |  115 +
+ samples/asdocs/AS3LR/flash/sampler/StackFrame.html |   52 +
+ samples/asdocs/AS3LR/flash/sampler/class-list.html |    3 +
+ .../asdocs/AS3LR/flash/sampler/package-detail.html |   45 +
+ samples/asdocs/AS3LR/flash/sampler/package.html    |  343 ++
+ .../AS3LR/flash/security/IURIDereferencer.html     |   50 +
+ .../security/ReferencesValidationSetting.html      |   52 +
+ .../flash/security/RevocationCheckSettings.html    |   58 +
+ .../AS3LR/flash/security/SignatureStatus.html      |   52 +
+ .../AS3LR/flash/security/SignerTrustSettings.html  |   57 +
+ .../flash/security/XMLSignatureValidator.html      |  559 ++
+ .../asdocs/AS3LR/flash/security/class-list.html    |    3 +
+ .../AS3LR/flash/security/package-detail.html       |   40 +
+ .../AS3LR/flash/system/ApplicationDomain.html      |  340 ++
+ .../asdocs/AS3LR/flash/system/Capabilities.html    |  609 ++
+ samples/asdocs/AS3LR/flash/system/IME.html         |  127 +
+ .../AS3LR/flash/system/IMEConversionMode.html      |  107 +
+ .../AS3LR/flash/system/JPEGLoaderContext.html      |   74 +
+ .../asdocs/AS3LR/flash/system/LoaderContext.html   |  241 +
+ samples/asdocs/AS3LR/flash/system/Security.html    |  567 ++
+ .../asdocs/AS3LR/flash/system/SecurityDomain.html  |   44 +
+ .../asdocs/AS3LR/flash/system/SecurityPanel.html   |  123 +
+ samples/asdocs/AS3LR/flash/system/System.html      |  157 +
+ samples/asdocs/AS3LR/flash/system/class-list.html  |    3 +
+ .../asdocs/AS3LR/flash/system/package-detail.html  |   46 +
+ samples/asdocs/AS3LR/flash/system/package.html     |  162 +
+ samples/asdocs/AS3LR/flash/text/AntiAliasType.html |   55 +
+ samples/asdocs/AS3LR/flash/text/CSMSettings.html   |   69 +
+ samples/asdocs/AS3LR/flash/text/Font.html          |   89 +
+ samples/asdocs/AS3LR/flash/text/FontStyle.html     |   51 +
+ samples/asdocs/AS3LR/flash/text/FontType.html      |   92 +
+ samples/asdocs/AS3LR/flash/text/GridFitType.html   |   65 +
+ samples/asdocs/AS3LR/flash/text/StaticText.html    |  125 +
+ samples/asdocs/AS3LR/flash/text/StyleSheet.html    |  396 ++
+ samples/asdocs/AS3LR/flash/text/TextColorType.html |   47 +
+ .../asdocs/AS3LR/flash/text/TextDisplayMode.html   |   50 +
+ samples/asdocs/AS3LR/flash/text/TextExtent.html    |   40 +
+ samples/asdocs/AS3LR/flash/text/TextField.html     | 2962 ++++++++++
+ .../asdocs/AS3LR/flash/text/TextFieldAutoSize.html |   68 +
+ samples/asdocs/AS3LR/flash/text/TextFieldType.html |   49 +
+ samples/asdocs/AS3LR/flash/text/TextFormat.html    |  433 ++
+ .../asdocs/AS3LR/flash/text/TextFormatAlign.html   |   57 +
+ .../asdocs/AS3LR/flash/text/TextLineMetrics.html   |  183 +
+ samples/asdocs/AS3LR/flash/text/TextRenderer.html  |  173 +
+ samples/asdocs/AS3LR/flash/text/TextSnapshot.html  |  275 +
+ samples/asdocs/AS3LR/flash/text/class-list.html    |    3 +
+ .../AS3LR/flash/text/engine/BreakOpportunity.html  |   62 +
+ .../asdocs/AS3LR/flash/text/engine/CFFHinting.html |   57 +
+ .../AS3LR/flash/text/engine/ContentElement.html    |  157 +
+ .../asdocs/AS3LR/flash/text/engine/DigitCase.html  |   54 +
+ .../asdocs/AS3LR/flash/text/engine/DigitWidth.html |   54 +
+ .../flash/text/engine/EastAsianJustifier.html      |  144 +
+ .../AS3LR/flash/text/engine/ElementFormat.html     |  543 ++
+ .../AS3LR/flash/text/engine/FontDescription.html   |  284 +
+ .../asdocs/AS3LR/flash/text/engine/FontLookup.html |   61 +
+ .../AS3LR/flash/text/engine/FontMetrics.html       |  122 +
+ .../AS3LR/flash/text/engine/FontPosture.html       |   47 +
+ .../asdocs/AS3LR/flash/text/engine/FontWeight.html |   47 +
+ .../AS3LR/flash/text/engine/GraphicElement.html    |  137 +
+ .../AS3LR/flash/text/engine/GroupElement.html      |  262 +
+ .../flash/text/engine/JustificationStyle.html      |   57 +
+ .../asdocs/AS3LR/flash/text/engine/Kerning.html    |   52 +
+ .../AS3LR/flash/text/engine/LigatureLevel.html     |   64 +
+ .../AS3LR/flash/text/engine/LineJustification.html |   52 +
+ .../AS3LR/flash/text/engine/RenderingMode.html     |   53 +
+ .../AS3LR/flash/text/engine/SpaceJustifier.html    |  117 +
+ .../AS3LR/flash/text/engine/TabAlignment.html      |   57 +
+ .../asdocs/AS3LR/flash/text/engine/TabStop.html    |  136 +
+ .../AS3LR/flash/text/engine/TextBaseline.html      |   92 +
+ .../asdocs/AS3LR/flash/text/engine/TextBlock.html  |  666 +++
+ .../AS3LR/flash/text/engine/TextElement.html       |  178 +
+ .../AS3LR/flash/text/engine/TextJustifier.html     |   92 +
+ .../asdocs/AS3LR/flash/text/engine/TextLine.html   |  746 +++
+ .../flash/text/engine/TextLineCreationResult.html  |   59 +
+ .../flash/text/engine/TextLineMirrorRegion.html    |  181 +
+ .../AS3LR/flash/text/engine/TextLineValidity.html  |   59 +
+ .../AS3LR/flash/text/engine/TextRotation.html      |   71 +
+ .../AS3LR/flash/text/engine/TypographicCase.html   |   70 +
+ .../asdocs/AS3LR/flash/text/engine/class-list.html |    3 +
+ .../AS3LR/flash/text/engine/package-detail.html    |   76 +
+ .../asdocs/AS3LR/flash/text/package-detail.html    |   55 +
+ samples/asdocs/AS3LR/flash/ui/ContextMenu.html     |  389 ++
+ .../AS3LR/flash/ui/ContextMenuBuiltInItems.html    |  117 +
+ .../AS3LR/flash/ui/ContextMenuClipboardItems.html  |   69 +
+ samples/asdocs/AS3LR/flash/ui/ContextMenuItem.html |  164 +
+ samples/asdocs/AS3LR/flash/ui/KeyLocation.html     |   63 +
+ samples/asdocs/AS3LR/flash/ui/Keyboard.html        | 1033 ++++
+ samples/asdocs/AS3LR/flash/ui/Mouse.html           |  187 +
+ samples/asdocs/AS3LR/flash/ui/MouseCursor.html     |   61 +
+ samples/asdocs/AS3LR/flash/ui/class-list.html      |    3 +
+ samples/asdocs/AS3LR/flash/ui/package-detail.html  |   38 +
+ samples/asdocs/AS3LR/flash/utils/ByteArray.html    |  564 ++
+ .../AS3LR/flash/utils/CompressionAlgorithm.html    |   49 +
+ samples/asdocs/AS3LR/flash/utils/Dictionary.html   |   73 +
+ samples/asdocs/AS3LR/flash/utils/Endian.html       |   76 +
+ samples/asdocs/AS3LR/flash/utils/IDataInput.html   |  236 +
+ samples/asdocs/AS3LR/flash/utils/IDataOutput.html  |  199 +
+ .../asdocs/AS3LR/flash/utils/IExternalizable.html  |  164 +
+ samples/asdocs/AS3LR/flash/utils/Proxy.html        |  295 +
+ samples/asdocs/AS3LR/flash/utils/Timer.html        |  226 +
+ samples/asdocs/AS3LR/flash/utils/class-list.html   |    3 +
+ .../asdocs/AS3LR/flash/utils/package-detail.html   |   57 +
+ samples/asdocs/AS3LR/flash/utils/package.html      |  344 ++
+ samples/asdocs/AS3LR/flash/xml/XMLDocument.html    |  269 +
+ samples/asdocs/AS3LR/flash/xml/XMLNode.html        |  366 ++
+ samples/asdocs/AS3LR/flash/xml/XMLNodeType.html    |   59 +
+ samples/asdocs/AS3LR/flash/xml/class-list.html     |    3 +
+ samples/asdocs/AS3LR/flash/xml/package-detail.html |   33 +
+ samples/asdocs/AS3LR/help.js                       | 1009 ++++
+ samples/asdocs/AS3LR/helpmap.txt                   | 6079 ++++++++++++++++++++
+ samples/asdocs/AS3LR/helpmapBaseUrl.txt            |    1 +
+ samples/asdocs/AS3LR/images/AirIcon12x12.gif       |  Bin 0 -> 318 bytes
+ samples/asdocs/AS3LR/images/ApolloIcon12x12.gif    |  Bin 0 -> 318 bytes
+ samples/asdocs/AS3LR/images/CC.png                 |  Bin 0 -> 3472 bytes
+ samples/asdocs/AS3LR/images/Dash.png               |  Bin 0 -> 2801 bytes
+ .../DisplayObjectContainerSetChildIndex1.jpg       |  Bin 0 -> 3279 bytes
+ .../DisplayObjectContainerSetChildIndex2.jpg       |  Bin 0 -> 3290 bytes
+ .../AS3LR/images/DisplayObjectContainer_layers.jpg |  Bin 0 -> 5134 bytes
+ .../AS3LR/images/LineScaleMode_HORIZONTAL.jpg      |  Bin 0 -> 6139 bytes
+ .../asdocs/AS3LR/images/LineScaleMode_VERTICAL.jpg |  Bin 0 -> 6047 bytes
+ samples/asdocs/AS3LR/images/Matrix3Delements.jpg   |  Bin 0 -> 9133 bytes
+ samples/asdocs/AS3LR/images/TextLine.gif           |  Bin 0 -> 20205 bytes
+ samples/asdocs/AS3LR/images/Thumbs.db              |  Bin 0 -> 7680 bytes
+ samples/asdocs/AS3LR/images/Vector3Delements.jpg   |  Bin 0 -> 1807 bytes
+ .../images/beginGradientFill_interp_linearrgb.jpg  |  Bin 0 -> 4917 bytes
+ .../AS3LR/images/beginGradientFill_interp_rgb.jpg  |  Bin 0 -> 4582 bytes
+ .../AS3LR/images/beginGradientFill_spread_pad.jpg  |  Bin 0 -> 1474 bytes
+ .../images/beginGradientFill_spread_reflect.jpg    |  Bin 0 -> 5261 bytes
+ .../images/beginGradientFill_spread_repeat.jpg     |  Bin 0 -> 4821 bytes
+ .../AS3LR/images/bitmapData_draw_smoothing.jpg     |  Bin 0 -> 3377 bytes
+ .../asdocs/AS3LR/images/bitmap_smoothing_off.jpg   |  Bin 0 -> 16195 bytes
+ .../asdocs/AS3LR/images/bitmap_smoothing_on.jpg    |  Bin 0 -> 11348 bytes
+ samples/asdocs/AS3LR/images/blendMode-0a.jpg       |  Bin 0 -> 3215 bytes
+ samples/asdocs/AS3LR/images/blendMode-0b.jpg       |  Bin 0 -> 4770 bytes
+ samples/asdocs/AS3LR/images/blendMode-1.jpg        |  Bin 0 -> 6610 bytes
+ samples/asdocs/AS3LR/images/blendMode-10.jpg       |  Bin 0 -> 6408 bytes
+ samples/asdocs/AS3LR/images/blendMode-11.jpg       |  Bin 0 -> 3981 bytes
+ samples/asdocs/AS3LR/images/blendMode-12.jpg       |  Bin 0 -> 3105 bytes
+ samples/asdocs/AS3LR/images/blendMode-13.jpg       |  Bin 0 -> 6665 bytes
+ samples/asdocs/AS3LR/images/blendMode-14.jpg       |  Bin 0 -> 6835 bytes
+ samples/asdocs/AS3LR/images/blendMode-2.jpg        |  Bin 0 -> 6610 bytes
+ samples/asdocs/AS3LR/images/blendMode-3.jpg        |  Bin 0 -> 6584 bytes
+ samples/asdocs/AS3LR/images/blendMode-4.jpg        |  Bin 0 -> 6477 bytes
+ samples/asdocs/AS3LR/images/blendMode-5.jpg        |  Bin 0 -> 6273 bytes
+ samples/asdocs/AS3LR/images/blendMode-6.jpg        |  Bin 0 -> 6673 bytes
+ samples/asdocs/AS3LR/images/blendMode-7.jpg        |  Bin 0 -> 6930 bytes
+ samples/asdocs/AS3LR/images/blendMode-8.jpg        |  Bin 0 -> 6693 bytes
+ samples/asdocs/AS3LR/images/blendMode-9.jpg        |  Bin 0 -> 6912 bytes
+ samples/asdocs/AS3LR/images/collapsed.gif          |  Bin 0 -> 79 bytes
+ .../asdocs/AS3LR/images/createGradientBox-1.jpg    |  Bin 0 -> 863 bytes
+ .../asdocs/AS3LR/images/createGradientBox-2.jpg    |  Bin 0 -> 884 bytes
+ .../asdocs/AS3LR/images/createGradientBox-3.jpg    |  Bin 0 -> 901 bytes
+ .../asdocs/AS3LR/images/createGradientBox-4.jpg    |  Bin 0 -> 894 bytes
+ samples/asdocs/AS3LR/images/crossScript_load.jpg   |  Bin 0 -> 46431 bytes
+ samples/asdocs/AS3LR/images/crossproduct.jpg       |  Bin 0 -> 8700 bytes
+ samples/asdocs/AS3LR/images/detailHeaderRule.jpg   |  Bin 0 -> 284 bytes
+ .../asdocs/AS3LR/images/detailSectionHeader.jpg    |  Bin 0 -> 307 bytes
+ samples/asdocs/AS3LR/images/expanded.gif           |  Bin 0 -> 79 bytes
+ samples/asdocs/AS3LR/images/frustum.jpg            |  Bin 0 -> 9116 bytes
+ samples/asdocs/AS3LR/images/gradient-ratios-1.jpg  |  Bin 0 -> 1240 bytes
+ samples/asdocs/AS3LR/images/gradient-ratios-2.jpg  |  Bin 0 -> 1921 bytes
+ samples/asdocs/AS3LR/images/gradient-ratios-3.jpg  |  Bin 0 -> 1229 bytes
+ .../asdocs/AS3LR/images/gradientBevelRainbow.jpg   |  Bin 0 -> 44755 bytes
+ .../asdocs/AS3LR/images/gradientGlowDiagram.jpg    |  Bin 0 -> 24323 bytes
+ samples/asdocs/AS3LR/images/gradientGlowInner.jpg  |  Bin 0 -> 8060 bytes
+ samples/asdocs/AS3LR/images/gradientGlowOuter.jpg  |  Bin 0 -> 11931 bytes
+ samples/asdocs/AS3LR/images/identityMatrix.jpg     |  Bin 0 -> 3858 bytes
+ samples/asdocs/AS3LR/images/inherit-arrow.gif      |  Bin 0 -> 85 bytes
+ samples/asdocs/AS3LR/images/inheritedSummary.gif   |  Bin 0 -> 144 bytes
+ .../asdocs/AS3LR/images/lineStyle_pixelHinting.jpg |  Bin 0 -> 12256 bytes
+ samples/asdocs/AS3LR/images/linecap.jpg            |  Bin 0 -> 4465 bytes
+ samples/asdocs/AS3LR/images/linejoin.jpg           |  Bin 0 -> 7578 bytes
+ samples/asdocs/AS3LR/images/loaderInfo_object.jpg  |  Bin 0 -> 25994 bytes
+ .../images/localconnection_differentdomains.gif    |  Bin 0 -> 11078 bytes
+ .../AS3LR/images/localconnection_samedomains.gif   |  Bin 0 -> 13475 bytes
+ .../images/localconnection_unknowndomains.gif      |  Bin 0 -> 14292 bytes
+ samples/asdocs/AS3LR/images/logo.jpg               |  Bin 0 -> 2037 bytes
+ samples/asdocs/AS3LR/images/matrix_identity.jpg    |  Bin 0 -> 3157 bytes
+ samples/asdocs/AS3LR/images/matrix_props1.jpg      |  Bin 0 -> 3465 bytes
+ samples/asdocs/AS3LR/images/matrix_props2.jpg      |  Bin 0 -> 3685 bytes
+ samples/asdocs/AS3LR/images/matrix_rotate.jpg      |  Bin 0 -> 6710 bytes
+ .../asdocs/AS3LR/images/matrix_rotate_image.jpg    |  Bin 0 -> 3264 bytes
+ samples/asdocs/AS3LR/images/matrix_scale.jpg       |  Bin 0 -> 3542 bytes
+ samples/asdocs/AS3LR/images/matrix_scale_image.jpg |  Bin 0 -> 1900 bytes
+ samples/asdocs/AS3LR/images/matrix_skew.jpg        |  Bin 0 -> 6937 bytes
+ samples/asdocs/AS3LR/images/matrix_skew_image.jpg  |  Bin 0 -> 2153 bytes
+ samples/asdocs/AS3LR/images/matrix_translate.jpg   |  Bin 0 -> 3202 bytes
+ .../asdocs/AS3LR/images/matrix_translate_image.jpg |  Bin 0 -> 2463 bytes
+ samples/asdocs/AS3LR/images/miterLimit.jpg         |  Bin 0 -> 7234 bytes
+ .../images/movieClip_beginBitmapFill_repeat_1.jpg  |  Bin 0 -> 476 bytes
+ .../images/movieClip_beginBitmapFill_repeat_2.jpg  |  Bin 0 -> 1815 bytes
+ .../images/movieClip_beginBitmapFill_repeat_3.jpg  |  Bin 0 -> 697 bytes
+ samples/asdocs/AS3LR/images/quad_bezier.jpg        |  Bin 0 -> 16157 bytes
+ samples/asdocs/AS3LR/images/radial_sketch.jpg      |  Bin 0 -> 5400 bytes
+ samples/asdocs/AS3LR/images/rectangle.jpg          |  Bin 0 -> 9652 bytes
+ .../asdocs/AS3LR/images/rectangle_intersect.jpg    |  Bin 0 -> 10043 bytes
+ samples/asdocs/AS3LR/images/rectangle_union.jpg    |  Bin 0 -> 9690 bytes
+ samples/asdocs/AS3LR/images/resultantVector3D.jpg  |  Bin 0 -> 10432 bytes
+ samples/asdocs/AS3LR/images/scale9Grid-a.jpg       |  Bin 0 -> 13474 bytes
+ samples/asdocs/AS3LR/images/scale9Grid-b.jpg       |  Bin 0 -> 14709 bytes
+ samples/asdocs/AS3LR/images/scale9Grid-c.jpg       |  Bin 0 -> 8424 bytes
+ samples/asdocs/AS3LR/images/scale9Grid-d.jpg       |  Bin 0 -> 3837 bytes
+ samples/asdocs/AS3LR/images/scale9Grid-e.jpg       |  Bin 0 -> 1913 bytes
+ samples/asdocs/AS3LR/images/scale9Grid-f.jpg       |  Bin 0 -> 19195 bytes
+ samples/asdocs/AS3LR/images/secureParam.jpg        |  Bin 0 -> 48391 bytes
+ samples/asdocs/AS3LR/images/sorenson_logo.gif      |  Bin 0 -> 711 bytes
+ samples/asdocs/AS3LR/images/text-metrics.jpg       |  Bin 0 -> 45727 bytes
+ samples/asdocs/AS3LR/images/textBaselines.gif      |  Bin 0 -> 14816 bytes
+ samples/asdocs/AS3LR/images/titleTableBottom.jpg   |  Bin 0 -> 296 bytes
+ samples/asdocs/AS3LR/images/titleTableMiddle.jpg   |  Bin 0 -> 308 bytes
+ samples/asdocs/AS3LR/images/titleTableTop.jpg      |  Bin 0 -> 326 bytes
+ .../AS3LR/images/winding_positive_negative.gif     |  Bin 0 -> 6093 bytes
+ .../AS3LR/images/winding_rules_evenodd_nonzero.gif |  Bin 0 -> 5908 bytes
+ samples/asdocs/AS3LR/images/xyzAxes.jpg            |  Bin 0 -> 7551 bytes
+ samples/asdocs/AS3LR/index-list.html               |   70 +
+ samples/asdocs/AS3LR/index.html                    |  107 +
+ samples/asdocs/AS3LR/insertFlashPopup.js           |   11 +
+ samples/asdocs/AS3LR/int.html                      |  217 +
+ samples/asdocs/AS3LR/language-elements.html        |   28 +
+ samples/asdocs/AS3LR/legalNotices.html             |  158 +
+ .../asdocs/AS3LR/localDatabaseSQLErrorDetails.html |  591 ++
+ samples/asdocs/AS3LR/localDatabaseSQLSupport.html  | 1032 ++++
+ samples/asdocs/AS3LR/migration.html                |   27 +
+ samples/asdocs/AS3LR/motionXSD.html                |  485 ++
+ samples/asdocs/AS3LR/operators.html                | 1880 ++++++
+ samples/asdocs/AS3LR/override.css                  |   99 +
+ samples/asdocs/AS3LR/overview.html                 |   55 +
+ samples/asdocs/AS3LR/package-detail.html           |  102 +
+ samples/asdocs/AS3LR/package-frame.html            |   20 +
+ samples/asdocs/AS3LR/package-list.html             |    3 +
+ samples/asdocs/AS3LR/package-summary.html          |   41 +
+ samples/asdocs/AS3LR/package.html                  |  378 ++
+ samples/asdocs/AS3LR/print.css                     |   97 +
+ samples/asdocs/AS3LR/runtimeErrors.html            |  632 ++
+ samples/asdocs/AS3LR/search.html                   |  905 +++
+ samples/asdocs/AS3LR/specialTypes.html             |   36 +
+ samples/asdocs/AS3LR/srch_db.js                    |  622 ++
+ samples/asdocs/AS3LR/statements.html               | 1417 +++++
+ samples/asdocs/AS3LR/style.css                     |  638 ++
+ samples/asdocs/AS3LR/terms.js                      |   70 +
+ samples/asdocs/AS3LR/title-bar.html                |  125 +
+ samples/asdocs/AS3LR/treeview.js                   | 1776 ++++++
+ samples/asdocs/AS3LR/uint.html                     |  212 +
+ samples/asdocs/AS3LR/utilities.js                  |   89 +
+ samples/asdocs/as3-gettext-0.5/AC_OETags.js        |  129 +
+ samples/asdocs/as3-gettext-0.5/all-classes.html    |   49 +
+ samples/asdocs/as3-gettext-0.5/all-index-A.html    |   14 +
+ samples/asdocs/as3-gettext-0.5/all-index-B.html    |   16 +
+ samples/asdocs/as3-gettext-0.5/all-index-C.html    |   27 +
+ samples/asdocs/as3-gettext-0.5/all-index-D.html    |   23 +
+ samples/asdocs/as3-gettext-0.5/all-index-E.html    |   13 +
+ samples/asdocs/as3-gettext-0.5/all-index-F.html    |   15 +
+ samples/asdocs/as3-gettext-0.5/all-index-G.html    |   24 +
+ samples/asdocs/as3-gettext-0.5/all-index-H.html    |   13 +
+ samples/asdocs/as3-gettext-0.5/all-index-I.html    |   20 +
+ samples/asdocs/as3-gettext-0.5/all-index-J.html    |   13 +
+ samples/asdocs/as3-gettext-0.5/all-index-K.html    |   13 +
+ samples/asdocs/as3-gettext-0.5/all-index-L.html    |   25 +
+ samples/asdocs/as3-gettext-0.5/all-index-M.html    |   19 +
+ samples/asdocs/as3-gettext-0.5/all-index-N.html    |   16 +
+ samples/asdocs/as3-gettext-0.5/all-index-O.html    |   13 +
+ samples/asdocs/as3-gettext-0.5/all-index-P.html    |   24 +
+ samples/asdocs/as3-gettext-0.5/all-index-Q.html    |   13 +
+ samples/asdocs/as3-gettext-0.5/all-index-R.html    |   15 +
+ samples/asdocs/as3-gettext-0.5/all-index-S.html    |   19 +
+ samples/asdocs/as3-gettext-0.5/all-index-T.html    |   14 +
+ samples/asdocs/as3-gettext-0.5/all-index-U.html    |   13 +
+ samples/asdocs/as3-gettext-0.5/all-index-V.html    |   13 +
+ samples/asdocs/as3-gettext-0.5/all-index-W.html    |   13 +
+ samples/asdocs/as3-gettext-0.5/all-index-X.html    |   13 +
+ samples/asdocs/as3-gettext-0.5/all-index-Y.html    |   13 +
+ samples/asdocs/as3-gettext-0.5/all-index-Z.html    |   13 +
+ samples/asdocs/as3-gettext-0.5/asdoc.js            |  286 +
+ samples/asdocs/as3-gettext-0.5/class-list.html     |    1 +
+ samples/asdocs/as3-gettext-0.5/class-summary.html  |   24 +
+ samples/asdocs/as3-gettext-0.5/cookies.js          |   84 +
+ .../as3-gettext-0.5/gnu/as3/gettext/Domain.html    |   20 +
+ .../gnu/as3/gettext/GettextError.html              |   18 +
+ .../as3-gettext-0.5/gnu/as3/gettext/ISO_3166.html  |   25 +
+ .../as3-gettext-0.5/gnu/as3/gettext/ISO_639_1.html |   25 +
+ .../as3-gettext-0.5/gnu/as3/gettext/MOFile.html    |  110 +
+ .../gnu/as3/gettext/_FxGettext.html                |   37 +
+ .../as3-gettext-0.5/gnu/as3/gettext/_Gettext.html  |   78 +
+ .../as3-gettext-0.5/gnu/as3/gettext/_Locale.html   |   75 +
+ .../gnu/as3/gettext/class-list.html                |    1 +
+ .../gnu/as3/gettext/package-detail.html            |   32 +
+ .../as3-gettext-0.5/gnu/as3/gettext/package.html   |   54 +
+ .../gnu/as3/gettext/services/IGettextService.html  |   17 +
+ .../gettext/services/LocalFilesystemService.html   |   15 +
+ .../gnu/as3/gettext/services/URLLoaderService.html |   15 +
+ .../gnu/as3/gettext/services/class-list.html       |    1 +
+ .../gnu/as3/gettext/services/package-detail.html   |   14 +
+ samples/asdocs/as3-gettext-0.5/help.js             |  941 +++
+ .../asdocs/as3-gettext-0.5/images/AirIcon12x12.gif |  Bin 0 -> 318 bytes
+ .../P_AlternativeMetadataIndicator_30x28_N.png     |  Bin 0 -> 868 bytes
+ .../asdocs/as3-gettext-0.5/images/collapsed.gif    |  Bin 0 -> 79 bytes
+ .../as3-gettext-0.5/images/detailHeaderRule.jpg    |  Bin 0 -> 284 bytes
+ .../as3-gettext-0.5/images/detailSectionHeader.jpg |  Bin 0 -> 307 bytes
+ samples/asdocs/as3-gettext-0.5/images/expanded.gif |  Bin 0 -> 79 bytes
+ .../as3-gettext-0.5/images/inherit-arrow.gif       |  Bin 0 -> 85 bytes
+ .../as3-gettext-0.5/images/inheritedSummary.gif    |  Bin 0 -> 144 bytes
+ samples/asdocs/as3-gettext-0.5/images/logo.jpg     |  Bin 0 -> 2037 bytes
+ .../as3-gettext-0.5/images/titleTableBottom.jpg    |  Bin 0 -> 296 bytes
+ .../as3-gettext-0.5/images/titleTableMiddle.jpg    |  Bin 0 -> 308 bytes
+ .../as3-gettext-0.5/images/titleTableTop.jpg       |  Bin 0 -> 326 bytes
+ samples/asdocs/as3-gettext-0.5/index-list.html     |   70 +
+ samples/asdocs/as3-gettext-0.5/index.html          |   40 +
+ samples/asdocs/as3-gettext-0.5/override.css        |   12 +
+ samples/asdocs/as3-gettext-0.5/package-detail.html |   16 +
+ samples/asdocs/as3-gettext-0.5/package-frame.html  |   18 +
+ samples/asdocs/as3-gettext-0.5/package-list.html   |    1 +
+ .../asdocs/as3-gettext-0.5/package-summary.html    |   13 +
+ samples/asdocs/as3-gettext-0.5/package.html        |   26 +
+ samples/asdocs/as3-gettext-0.5/print.css           |  110 +
+ samples/asdocs/as3-gettext-0.5/style.css           |  578 ++
+ samples/asdocs/as3-gettext-0.5/title-bar.html      |   41 +
+ samples/samples-cmd.sh                             |    3 +
+ samples/samples-lib.py                             |   29 +
+ 868 files changed, 168541 insertions(+), 3 deletions(-)
+
+commit a82775474d7daac09564160b6213b0adfbf48dd7
 Author: Vincent Petithory <vincent.petithory@gmail.com>
 Date:   Tue Sep 28 19:55:01 2010 +0200
 
@@ -11,7 +887,7 @@ Date:   Tue Sep 28 19:55:01 2010 +0200
  .gitignore        |    5 +
  AUTHORS           |    1 +
  COPYING           |  675 +++++++++++++++++++++++++++++++++++++++++++++++++++++
- ChangeLog         |    1 +
+ ChangeLog         |   24 ++
  INSTALL           |    6 +
  MANIFEST.in       |    9 +
  NEWS              |    6 +
@@ -21,4 +897,4 @@ Date:   Tue Sep 28 19:55:01 2010 +0200
  as2dh/dist.py     |   61 +++++
  bin/as2dh         |   71 ++++++
  setup.py          |   42 ++++
- 13 files changed, 1168 insertions(+), 0 deletions(-)
+ 13 files changed, 1191 insertions(+), 0 deletions(-)

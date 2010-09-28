@@ -1,0 +1,295 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0014)about:internet -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta name="book" content="ActionScript&nbsp;3.0&nbsp;Language&nbsp;and&nbsp;Components&nbsp;Reference"><meta name="lang" content="-"><link rel="stylesheet" href="../../style.css" type="text/css" media="screen"><link rel="stylesheet" href="../../print.css" type="text/css" media="print"><link rel="stylesheet" href="../../override.css" type="text/css"><meta name="keywords" content="Proxy,flash.utils.Proxy,callProperty,clear,clearInterval,clearTimeout,compress,deflate,deleteProperty,describeType,escapeMultiByte,getDefinitionByName,getDescendants,getProperty,getQualifiedClassName,getQualifiedSuperclassName,getTimer,hasProperty,inflate,isAttribute,nextName,nextNameIndex,nextValue,readBoolean,readBoolean,readByte,readByte,readBytes,readBytes,readDouble,readDouble,readExternal,readFloat,readFloat,readInt,readInt,readMultiByte,readMultiByte,readObject,readObject,readShort,readShort,readUTF,readUTF,readUTFBytes,readUTFBytes,readUnsignedByte,readUnsignedByte,readUnsignedInt,readUnsignedInt,readUnsignedShort,readUnsignedShort,reset,setInterval,setProperty,setTimeout,start,stop,toString,uncompress,unescapeMultiByte,writeBoolean,writeBoolean,writeByte,writeByte,writeBytes,writeBytes,writeDouble,writeDouble,writeExternal,writeFloat,writeFloat,writeInt,writeInt,writeMultiByte,writeMultiByte,writeObject,writeObject,writeShort,writeShort,writeUTF,writeUTF,writeUTFBytes,writeUTFBytes,writeUnsignedInt,writeUnsignedInt"><title>flash.utils.Proxy (ActionScript 3.0)</title><script src="../../AC_OETags.js" type="text/javascript"></script></head><body><script language="javascript" type="text/javascript" src="../../asdoc.js"></script><script language="javascript" type="text/javascript" src="../../help.js"></script><script language="javascript" type="text/javascript" src="../../cookies.js"></script><script language="javascript" type="text/javascript">  <!--  
+        
+         
+        asdocTitle = "Proxy - ActionScript 3.0 Language and Components Reference"; 
+        var baseRef = '../../'; 
+        window.onload = configPage; 
+          -->  </script>
+<script language="javascript" type="text/javascript"><!--
+function submitValue(){
+var searchStr=document.getElementById('search-livedocs').value;
+window.location="../../search.html"+"###"+searchStr;
+}
+--></script><script type="text/javascript"> scrollToNameAnchor(); </script><table class="titleTable" cellpadding="0" cellspacing="0" id="titleTable" style="display:none"><tr><td class="titleTableTitle" align="left">ActionScript 3.0 Language and Components Reference</td><td class="titleTableSearch" align="center"><form class="searchForm" method="get" action="../../search.html" onsubmit="submitValue();"><input class="hidden" name="loc" value="" type="hidden"><input class="hidden" name="termPrefix" value="" type="hidden"><input class="hidden" name="term" value="" type="hidden"><input class="hidden" name="area" value="" type="hidden"><input id="search-livedocs" name="search_text" value="" title="" type="text"> <input type="button" name="action" value="Search" onclick="submitValue()"></form></td><td class="titleTableTopNav" align="right"><a href="../../package-summary.html" onclick="loadClassListFrame('../../all-classes.html')">All Packages</a>&nbsp;|&nbsp;<a href="../../class-summary.html" onclick="loadClassListFrame('../../all-classes.html')">All Classes</a>&nbsp;|&nbsp;<a href="../../language-elements.html">Language Elements</a>&nbsp;| <a href="../../all-index-Symbols.html" onclick="loadClassListFrame('../../index-list.html')">Index</a>&nbsp;|&nbsp;<a href="../../appendixes.html">Appendixes</a>&nbsp;|&nbsp;<a href="../../conventions.html">Conventions</a>&nbsp;|&nbsp;<a id="framesLink1" href="../../index.html?flash/utils/Proxy.html&amp;flash/utils/class-list.html">Frames</a><a id="noFramesLink1" style="display:none" href="" onclick="parent.location=document.location"> No Frames </a></td><td class="titleTableLogo" align="right" rowspan="3"><img src="../../images/logo.jpg" class="logoImage" alt=" Adobe Logo " title=" Adobe Logo "></td></tr><tr class="titleTableRow2"><td class="titleTableSubTitle" id="subTitle" align="left">Proxy</td><td class="titleTableSubNav" id="subNav" align="right" colspan="2"><a href="#propertySummary">Properties</a>&nbsp;| <a href="#methodSummary">Methods</a>&nbsp;| <a href="#includeExamplesSummary">Examples</a></td></tr><tr class="titleTableRow3"><td colspan="3">&nbsp;</td></tr></table><script language="javascript" type="text/javascript" xml:space="preserve">                
+                                            
+        				
+        <!--				
+          				    				
+          					
+          if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Proxy"); titleBar_setSubNav(false,true,false,false,false,false,true,true,false,false,false,false,false,false);}				    
+          				        				    
+          				
+        -->                
+                                            
+        			
+      </script><div class="MainContent"><table class="classHeaderTable" cellpadding="0" cellspacing="0"><tr><td class="classHeaderTableLabel">Package</td><td><a href="package-detail.html" onclick="javascript:loadClassListFrame('class-list.html')">flash.utils</a></td></tr><tr><td class="classHeaderTableLabel">Class</td><td class="classSignature">public  class  Proxy</td></tr><tr><td class="classHeaderTableLabel">Inheritance</td><td class="inheritanceList">Proxy  <img src="../../images/inherit-arrow.gif" title="Inheritance" alt="Inheritance" class="inheritArrow"> <a href="../../Object.html">Object</a></td></tr></table><p></p><table cellpadding="0" cellspacing="0" border="0"><tr><td style="white-space:nowrap" valign="top"><b>Language Version:&nbsp;</b></td><td>ActionScript 3.0</td></tr></table><table cellpadding="0" cellspacing="0" border="0"><tr><td style="white-space:nowrap" valign="top"><b>Runtime Versions:&nbsp;</b></td><td>AIR 1.0 Flash Player 9</td></tr></table><p></p><p></p><p></p>
+ The Proxy class lets you
+ override the default behavior of ActionScript operations
+ (such as retrieving and modifying properties) on an object.
+ 
+ <p>The Proxy class has no constructor, and you should not attempt to instantiate Proxy.
+ Instead, subclass the Proxy class to override methods such as 
+ <code>getProperty</code> and provide custom behavior. If you try to use a method of 
+ the Proxy class without overriding the method, an exception is thrown.</p>
+               <p>And, keep in mind, your own code overriding the methods of the Proxy class can throw 
+ exceptions unintentionally. Throwing exceptions when using these methods causes problems because
+ the calling code (using operators like <code>in</code>, <code>is</code>, <code>delete</code> and others) 
+ does not expect exceptions. Unless you're already sure your overriding method does not throw exceptions,
+ Adobe recommends using <code>try..catch</code> statements around your implementation of the Proxy class 
+ to avoid fatal errors when operators call your methods. For example: </p> 
+               <div class="listing"><pre>
+ dynamic class MyProxy extends Proxy {
+     flash_proxy override function callProperty(name:*, ...rest):* {
+       try {
+         // custom code here
+       }
+       catch (e:Error) {
+         // respond to error here
+       }
+ }   
+ </pre></div>
+ 
+               <p>The Proxy class is a replacement for the
+ <code>Object.__resolve</code> and <code>Object.addProperty</code>
+ features of ActionScript 2.0, which are no longer
+ available in ActionScript 3.0. The <code>Object.addProperty()</code> feature allowed you to
+ dynamically create get and set methods in ActionScript 2.0. Although ActionScript 3.0 
+ provides get and set methods at compile time, you cannot dynamically assign one 
+ to an object unless you use the Proxy class.</p>
+ 
+               <p>To avoid collisions with the <code>public</code> namespace,
+ the methods of the Proxy class are in the
+ <code>flash_proxy</code> namespace.</p>
+ 
+               <p>Where methods of the Proxy class take a <code>name</code>
+ argument, <code>name</code> can be either a String or
+ a QName object (if namespaces are being used).</p>
+ 
+            <p></p><p><a href="#includeExamplesSummary">View the examples</a></p><br/><hr></div><a name="propertySummary"></a><div class="summarySection"><div class="summaryTableTitle">Public Properties</div><div class="showHideLinks"><div id="hideInheritedProperty" class="hideInheritedProperty"><a class="showHideLink" href="#propertySummary" onclick="javascript:setInheritedVisible(false,'Property');"><img class="showHideLinkImage" src="../../images/expanded.gif"> Hide Inherited Public Properties</a></div><div id="showInheritedProperty" class="showInheritedProperty"><a class="showHideLink" href="#propertySummary" onclick="javascript:setInheritedVisible(true,'Property');"><img class="showHideLinkImage" src="../../images/collapsed.gif"> Show Inherited Public Properties</a></div></div><table cellspacing="0" cellpadding="3" class="summaryTable hideInheritedProperty" id="summaryTableProperty"><tr><th>&nbsp;</th><th colspan="2">Property</th><th>Defined By</th></tr><tr class="hideInheritedProperty"><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img src="../../images/inheritedSummary.gif" alt="Inherited" title="Inherited" class="inheritedSummaryImage"></td><td class="summaryTableSignatureCol"><a href="../../Object.html#constructor" class="signatureLink">constructor</a> : <a href="../../Object.html"><a href="../../Object.html">Object</a></a><div class="summaryTableDescription">
+	 A reference to the class object or constructor function for a given object instance.</div></td><td class="summaryTableOwnerCol"><a href="../../Object.html">Object</a></td></tr><tr class="hideInheritedProperty"><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img src="../../images/inheritedSummary.gif" alt="Inherited" title="Inherited" class="inheritedSummaryImage"></td><td class="summaryTableSignatureCol"><a href="../../Object.html#prototype" class="signatureLink">prototype</a> : <a href="../../Object.html"><a href="../../Object.html">Object</a></a><div class="summaryTableDescription">[static] 
+	 A reference to the prototype object of a class or function object.</div></td><td class="summaryTableOwnerCol"><a href="../../Object.html">Object</a></td></tr></table></div><a name="methodSummary"></a><div class="summarySection"><div class="summaryTableTitle">Public Methods </div><div class="showHideLinks"><div id="hideInheritedMethod" class="hideInheritedMethod"><a class="showHideLink" href="#methodSummary" onclick="javascript:setInheritedVisible(false,'Method');"><img class="showHideLinkImage" src="../../images/expanded.gif"> Hide Inherited Public Methods</a></div><div id="showInheritedMethod" class="showInheritedMethod"><a class="showHideLink" href="#methodSummary" onclick="javascript:setInheritedVisible(true,'Method');"><img class="showHideLinkImage" src="../../images/collapsed.gif"> Show Inherited Public Methods</a></div></div><table cellspacing="0" cellpadding="3" class="summaryTable hideInheritedMethod" id="summaryTableMethod"><tr><th>&nbsp;</th><th colspan="2">Method</th><th>Defined By</th></tr><tr class="hideInheritedMethod"><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img src="../../images/inheritedSummary.gif" alt="Inherited" title="Inherited" class="inheritedSummaryImage"></td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="../../Object.html#hasOwnProperty()" class="signatureLink">hasOwnProperty</a>(name:<a href="../../String.html"><a href="../../String.html">String</a></a>):<a href="../../Boolean.html"><a href="../../Boolean.html">Boolean</a></a></div><div class="summaryTableDescription">
+	 Indicates whether an object has a specified property defined.</div></td><td class="summaryTableOwnerCol"><a href="../../Object.html">Object</a></td></tr><tr class="hideInheritedMethod"><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img src="../../images/inheritedSummary.gif" alt="Inherited" title="Inherited" class="inheritedSummaryImage"></td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="../../Object.html#isPrototypeOf()" class="signatureLink">isPrototypeOf</a>(theClass:<a href="../../Object.html"><a href="../../Object.html">Object</a></a>):<a href="../../Boolean.html"><a href="../../Boolean.html">Boolean</a></a></div><div class="summaryTableDescription">
+	 Indicates whether an instance of the Object class is in the prototype chain of the object specified 
+	 as the parameter.</div></td><td class="summaryTableOwnerCol"><a href="../../Object.html">Object</a></td></tr><tr class="hideInheritedMethod"><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img src="../../images/inheritedSummary.gif" alt="Inherited" title="Inherited" class="inheritedSummaryImage"></td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="../../Object.html#propertyIsEnumerable()" class="signatureLink">propertyIsEnumerable</a>(name:<a href="../../String.html"><a href="../../String.html">String</a></a>):<a href="../../Boolean.html"><a href="../../Boolean.html">Boolean</a></a></div><div class="summaryTableDescription">
+	 Indicates whether the specified property exists and is enumerable.</div></td><td class="summaryTableOwnerCol"><a href="../../Object.html">Object</a></td></tr><tr class="hideInheritedMethod"><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img src="../../images/inheritedSummary.gif" alt="Inherited" title="Inherited" class="inheritedSummaryImage"></td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="../../Object.html#setPropertyIsEnumerable()" class="signatureLink">setPropertyIsEnumerable</a>(name:<a href="../../String.html"><a href="../../String.html">String</a></a>, isEnum:<a href="../../Boolean.html"><a href="../../Boolean.html">Boolean</a></a> = true):<a href="../../specialTypes.html#void">void</a></div><div class="summaryTableDescription">
+     Sets the availability of a dynamic property for loop operations.</div></td><td class="summaryTableOwnerCol"><a href="../../Object.html">Object</a></td></tr><tr class="hideInheritedMethod"><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img src="../../images/inheritedSummary.gif" alt="Inherited" title="Inherited" class="inheritedSummaryImage"></td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="../../Object.html#toString()" class="signatureLink">toString</a>():<a href="../../String.html"><a href="../../String.html">String</a></a></div><div class="summaryTableDescription">
+	 Returns the string representation of the specified object.</div></td><td class="summaryTableOwnerCol"><a href="../../Object.html">Object</a></td></tr><tr class="hideInheritedMethod"><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img src="../../images/inheritedSummary.gif" alt="Inherited" title="Inherited" class="inheritedSummaryImage"></td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="../../Object.html#valueOf()" class="signatureLink">valueOf</a>():<a href="../../Object.html"><a href="../../Object.html">Object</a></a></div><div class="summaryTableDescription">
+	 Returns the primitive value of the specified object.</div></td><td class="summaryTableOwnerCol"><a href="../../Object.html">Object</a></td></tr></table></div><a name="methodSummary"></a><a name="protectedMethodSummary"></a><div class="summarySection"><div class="summaryTableTitle">Protected Methods </div><table cellspacing="0" cellpadding="3" class="summaryTable " id="summaryTableProtectedMethod"><tr><th>&nbsp;</th><th colspan="2">Method</th><th>Defined By</th></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#callProperty()" class="signatureLink">callProperty</a>(name:<a href="../../specialTypes.html#*">*</a>, <a href="../../statements.html#..._(rest)_parameter">...</a> rest):<a href="../../specialTypes.html#*">*</a></div><div class="summaryTableDescription">
+	 Overrides the behavior of an object property that can be called as a function.</div></td><td class="summaryTableOwnerCol">Proxy</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#deleteProperty()" class="signatureLink">deleteProperty</a>(name:<a href="../../specialTypes.html#*">*</a>):<a href="../../Boolean.html"><a href="../../Boolean.html">Boolean</a></a></div><div class="summaryTableDescription">
+	 Overrides the request to delete a property.</div></td><td class="summaryTableOwnerCol">Proxy</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#getDescendants()" class="signatureLink">getDescendants</a>(name:<a href="../../specialTypes.html#*">*</a>):<a href="../../specialTypes.html#*">*</a></div><div class="summaryTableDescription">
+	 Overrides the use of the descendant operator.</div></td><td class="summaryTableOwnerCol">Proxy</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#getProperty()" class="signatureLink">getProperty</a>(name:<a href="../../specialTypes.html#*">*</a>):<a href="../../specialTypes.html#*">*</a></div><div class="summaryTableDescription">
+     Overrides any request for a property's value.</div></td><td class="summaryTableOwnerCol">Proxy</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#hasProperty()" class="signatureLink">hasProperty</a>(name:<a href="../../specialTypes.html#*">*</a>):<a href="../../Boolean.html"><a href="../../Boolean.html">Boolean</a></a></div><div class="summaryTableDescription">
+	 Overrides a request to check whether an object has a particular property by name.</div></td><td class="summaryTableOwnerCol">Proxy</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#isAttribute()" class="signatureLink">isAttribute</a>(name:<a href="../../specialTypes.html#*">*</a>):<a href="../../Boolean.html"><a href="../../Boolean.html">Boolean</a></a></div><div class="summaryTableDescription">
+	 Checks whether a supplied QName is also marked as an attribute.</div></td><td class="summaryTableOwnerCol">Proxy</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#nextName()" class="signatureLink">nextName</a>(index:<a href="../../int.html"><a href="../../int.html">int</a></a>):<a href="../../String.html"><a href="../../String.html">String</a></a></div><div class="summaryTableDescription">
+	 Allows enumeration of the proxied object's properties by index number to 
+	 retrieve property names.</div></td><td class="summaryTableOwnerCol">Proxy</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#nextNameIndex()" class="signatureLink">nextNameIndex</a>(index:<a href="../../int.html"><a href="../../int.html">int</a></a>):<a href="../../int.html"><a href="../../int.html">int</a></a></div><div class="summaryTableDescription">
+	 Allows enumeration of the proxied object's properties by index number.</div></td><td class="summaryTableOwnerCol">Proxy</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#nextValue()" class="signatureLink">nextValue</a>(index:<a href="../../int.html"><a href="../../int.html">int</a></a>):<a href="../../specialTypes.html#*">*</a></div><div class="summaryTableDescription">
+ 	 Allows enumeration of the proxied object's properties by index number to 
+	 retrieve property values.</div></td><td class="summaryTableOwnerCol">Proxy</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#setProperty()" class="signatureLink">setProperty</a>(name:<a href="../../specialTypes.html#*">*</a>, value:<a href="../../specialTypes.html#*">*</a>):<a href="../../specialTypes.html#void">void</a></div><div class="summaryTableDescription">
+	 Overrides a call to change a property's value.</div></td><td class="summaryTableOwnerCol">Proxy</td></tr></table></div><script language="javascript" type="text/javascript"><!--                      showHideInherited();                      --></script><div class="MainContent"><a name="methodDetail"></a><div class="detailSectionHeader">Method Detail</div><a name="callProperty()"></a><a name="callProperty(,restParam)"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">callProperty</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td></tr></table><div class="detailBody"><code> <a href="../../statements.html#flash_proxy">flash_proxy</a> function callProperty(name:<a href="../../specialTypes.html#*">*</a>, <a href="../../statements.html#..._(rest)_parameter">...</a> rest):<a href="../../specialTypes.html#*">*</a></code><p></p><table cellpadding="0" cellspacing="0" border="0"><tr><td style="white-space:nowrap" valign="top"><b>Language Version:&nbsp;</b></td><td>ActionScript 3.0</td></tr></table><table cellpadding="0" cellspacing="0" border="0"><tr><td style="white-space:nowrap" valign="top"><b>Runtime Versions:&nbsp;</b></td><td>AIR 1.0 Flash Player 9</td></tr></table><p></p><p></p><p>
+	 Overrides the behavior of an object property that can be called as a function. When a method of 
+     the object is invoked, this method is called. While some objects can be called as functions,
+     some object properties can also be called as functions. 
+	 
+	 </p><p><span class="label"> Parameters </span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20px"></td><td><code><span class="label">name</span>:<a href="../../specialTypes.html#*">*</a></code> &mdash; The name of the method being invoked.
+	 </td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><a href="../../statements.html#..._(rest)_parameter">...</a> <span class="label">rest</span></code> &mdash; An array specifying the arguments to the
+	             called method.
+	 </td></tr></table></p><p></p><span class="label">Returns</span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20"></td><td><code><a href="../../specialTypes.html#*">*</a></code> &mdash; The return value of the called method.
+     </td></tr></table><p><span class="label">See also</span></p><div class="seeAlso"><a href="../../Function.html#call()" target="">Function.call()</a><br/><a href="http://www.ecma-international.org/publications/standards/Ecma-262.htm" target="mm_external">ECMA-262 Language Specification, 3rd Edition, section 15</a></div></div><a name="deleteProperty()"></a><a name="deleteProperty()"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">deleteProperty</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code> <a href="../../statements.html#flash_proxy">flash_proxy</a> function deleteProperty(name:<a href="../../specialTypes.html#*">*</a>):<a href="../../Boolean.html"><a href="../../Boolean.html">Boolean</a></a></code><p></p><table cellpadding="0" cellspacing="0" border="0"><tr><td style="white-space:nowrap" valign="top"><b>Language Version:&nbsp;</b></td><td>ActionScript 3.0</td></tr></table><table cellpadding="0" cellspacing="0" border="0"><tr><td style="white-space:nowrap" valign="top"><b>Runtime Versions:&nbsp;</b></td><td>AIR 1.0 Flash Player 9</td></tr></table><p></p><p></p><p>
+	 Overrides the request to delete a property. When a property is deleted
+	 with the <code>delete</code> operator, this
+     method is called to perform the deletion. 
+	 
+	 </p><p><span class="label"> Parameters </span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20px"></td><td><code><span class="label">name</span>:<a href="../../specialTypes.html#*">*</a></code> &mdash; The name of the property to delete.
+	 </td></tr></table></p><p></p><span class="label">Returns</span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20"></td><td><code><a href="../../Boolean.html"><a href="../../Boolean.html">Boolean</a></a></code> &mdash; If the property was deleted, <code>true</code>; otherwise <code>false</code>.
+     </td></tr></table><p><span class="label">See also</span></p><div class="seeAlso"><a href="../../operators.html#delete" target="">delete operator</a><br/><a href="http://www.ecma-international.org/publications/standards/Ecma-262.htm" target="mm_external">ECMA-262 Language Specification, 3rd Edition, 8.6.2.5</a></div></div><a name="getDescendants()"></a><a name="getDescendants()"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">getDescendants</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code> <a href="../../statements.html#flash_proxy">flash_proxy</a> function getDescendants(name:<a href="../../specialTypes.html#*">*</a>):<a href="../../specialTypes.html#*">*</a></code><p></p><table cellpadding="0" cellspacing="0" border="0"><tr><td style="white-space:nowrap" valign="top"><b>Language Version:&nbsp;</b></td><td>ActionScript 3.0</td></tr></table><table cellpadding="0" cellspacing="0" border="0"><tr><td style="white-space:nowrap" valign="top"><b>Runtime Versions:&nbsp;</b></td><td>AIR 1.0 Flash Player 9</td></tr></table><p></p><p></p><p>
+	 Overrides the use of the <code>descendant</code> operator.
+     When the <code>descendant</code> operator is used, this method
+	 is invoked.
+	 
+	 </p><p><span class="label"> Parameters </span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20px"></td><td><code><span class="label">name</span>:<a href="../../specialTypes.html#*">*</a></code> &mdash; The name of the property to descend
+	             into the object and search for.
+     </td></tr></table></p><p></p><span class="label">Returns</span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20"></td><td><code><a href="../../specialTypes.html#*">*</a></code> &mdash; The results of the <code>descendant</code> operator.
+     </td></tr></table><p><span class="label">See also</span></p><div class="seeAlso"><a href="../../operators.html#descendant_accessor" target="">descendant operator</a><br/><a href="http://www.ecma-international.org/publications/standards/Ecma-357.htm" target="mm_external">E4X Specification</a></div></div><a name="getProperty()"></a><a name="getProperty()"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">getProperty</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code> <a href="../../statements.html#flash_proxy">flash_proxy</a> function getProperty(name:<a href="../../specialTypes.html#*">*</a>):<a href="../../specialTypes.html#*">*</a></code><p></p><table cellpadding="0" cellspacing="0" border="0"><tr><td style="white-space:nowrap" valign="top"><b>Language Version:&nbsp;</b></td><td>ActionScript 3.0</td></tr></table><table cellpadding="0" cellspacing="0" border="0"><tr><td style="white-space:nowrap" valign="top"><b>Runtime Versions:&nbsp;</b></td><td>AIR 1.0 Flash Player 9</td></tr></table><p></p><p></p><p>
+     Overrides any request for a property's value.  If the property can't be found, the method 
+     returns <code>undefined</code>. For more information on this behavior, see 
+	 the ECMA-262 Language Specification, 3rd Edition, section 8.6.2.1.
+	 
+	 
+	 </p><p><span class="label"> Parameters </span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20px"></td><td><code><span class="label">name</span>:<a href="../../specialTypes.html#*">*</a></code> &mdash; The name of the property to retrieve.
+     </td></tr></table></p><p></p><span class="label">Returns</span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20"></td><td><code><a href="../../specialTypes.html#*">*</a></code> &mdash; The specified property or <code>undefined</code> if the property is not found.
+     </td></tr></table><p><span class="label">See also</span></p><div class="seeAlso"><a href="../../statements.html#get" target="">get statement</a><br/><a href="http://www.ecma-international.org/publications/standards/Ecma-262.htm" target="mm_external">ECMA-262 Language Specification, 3rd Edition, section 8.6.2.1</a></div></div><a name="hasProperty()"></a><a name="hasProperty()"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">hasProperty</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code> <a href="../../statements.html#flash_proxy">flash_proxy</a> function hasProperty(name:<a href="../../specialTypes.html#*">*</a>):<a href="../../Boolean.html"><a href="../../Boolean.html">Boolean</a></a></code><p></p><table cellpadding="0" cellspacing="0" border="0"><tr><td style="white-space:nowrap" valign="top"><b>Language Version:&nbsp;</b></td><td>ActionScript 3.0</td></tr></table><table cellpadding="0" cellspacing="0" border="0"><tr><td style="white-space:nowrap" valign="top"><b>Runtime Versions:&nbsp;</b></td><td>AIR 1.0 Flash Player 9</td></tr></table><p></p><p></p><p>
+	 Overrides a request to check whether an object has a particular property by name. 
+     
+	 
+	 </p><p><span class="label"> Parameters </span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20px"></td><td><code><span class="label">name</span>:<a href="../../specialTypes.html#*">*</a></code> &mdash; The name of the property to check for.
+	 </td></tr></table></p><p></p><span class="label">Returns</span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20"></td><td><code><a href="../../Boolean.html"><a href="../../Boolean.html">Boolean</a></a></code> &mdash; If the property exists, <code>true</code>; otherwise <code>false</code>.
+     </td></tr></table><p><span class="label">See also</span></p><div class="seeAlso"><a href="../../Object.html#hasOwnProperty()" target="">Object.hasOwnProperty()</a><br/><a href="http://www.ecma-international.org/publications/standards/Ecma-262.htm" target="mm_external">ECMA-262 Language Specification, 3rd Edition, section 8.6.2.4</a></div></div><a name="isAttribute()"></a><a name="isAttribute()"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">isAttribute</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code> <a href="../../statements.html#flash_proxy">flash_proxy</a> function isAttribute(name:<a href="../../specialTypes.html#*">*</a>):<a href="../../Boolean.html"><a href="../../Boolean.html">Boolean</a></a></code><p></p><table cellpadding="0" cellspacing="0" border="0"><tr><td style="white-space:nowrap" valign="top"><b>Language Version:&nbsp;</b></td><td>ActionScript 3.0</td></tr></table><table cellpadding="0" cellspacing="0" border="0"><tr><td style="white-space:nowrap" valign="top"><b>Runtime Versions:&nbsp;</b></td><td>AIR 1.0 Flash Player 9</td></tr></table><p></p><p></p><p>
+	 Checks whether a supplied QName is also marked as an attribute. 
+	 
+	 </p><p><span class="label"> Parameters </span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20px"></td><td><code><span class="label">name</span>:<a href="../../specialTypes.html#*">*</a></code> &mdash; The name of the property to check.
+     </td></tr></table></p><p></p><span class="label">Returns</span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20"></td><td><code><a href="../../Boolean.html"><a href="../../Boolean.html">Boolean</a></a></code> &mdash; Returns <code>true</code> if the argument for <code>name</code> is a QName that is also
+     marked as an attribute.
+     </td></tr></table><p><span class="label">See also</span></p><div class="seeAlso"><a href="../../QName.html" target="">QName class</a></div></div><a name="nextName()"></a><a name="nextName(int)"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">nextName</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code> <a href="../../statements.html#flash_proxy">flash_proxy</a> function nextName(index:<a href="../../int.html"><a href="../../int.html">int</a></a>):<a href="../../String.html"><a href="../../String.html">String</a></a></code><p></p><table cellpadding="0" cellspacing="0" border="0"><tr><td style="white-space:nowrap" valign="top"><b>Language Version:&nbsp;</b></td><td>ActionScript 3.0</td></tr></table><table cellpadding="0" cellspacing="0" border="0"><tr><td style="white-space:nowrap" valign="top"><b>Runtime Versions:&nbsp;</b></td><td>AIR 1.0 Flash Player 9</td></tr></table><p></p><p></p><p>
+	 Allows enumeration of the proxied object's properties by index number to 
+	 retrieve property names. However, you cannot
+	 enumerate the properties of the Proxy class themselves. 
+	 This function supports implementing <code>for...in</code> and 
+	 <code>for each..in</code> loops on the object to retrieve the desired names.
+	 <p>For example (with code from <code>Proxy.nextNameIndex()</code>):</p>
+     <div class="listing"><pre>
+     protected var _item:Array; // array of object's properties
+     override flash_proxy function nextNameIndex (index:int):int {
+         // initial call
+         if (index == 0) {
+             _item = new Array();
+             for (var x:* in _target) {
+                _item.push(x);
+             }
+         }
+     
+         if (index < _item.length) {
+             return index + 1;
+         } else {
+             return 0;
+         }
+     }
+     override flash_proxy function nextName(index:int):String {
+         return _item[index - 1];
+     }
+     </pre></div>
+ 	 
+ 	 </p><p><span class="label"> Parameters </span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20px"></td><td><code><span class="label">index</span>:<a href="../../int.html"><a href="../../int.html">int</a></a></code> &mdash; The zero-based index value of the object's property.
+	 </td></tr></table></p><p></p><span class="label">Returns</span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20"></td><td><code><a href="../../String.html"><a href="../../String.html">String</a></a></code> &mdash; String The property's name.
+	 </td></tr></table><p><span class="label">See also</span></p><div class="seeAlso"><a href="Proxy.html#nextNameIndex()" target="">Proxy.nextNameIndex()</a><br/><a href="Proxy.html#nextValue()" target="">Proxy.nextValue()</a></div></div><a name="nextNameIndex()"></a><a name="nextNameIndex(int)"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">nextNameIndex</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code> <a href="../../statements.html#flash_proxy">flash_proxy</a> function nextNameIndex(index:<a href="../../int.html"><a href="../../int.html">int</a></a>):<a href="../../int.html"><a href="../../int.html">int</a></a></code><p></p><table cellpadding="0" cellspacing="0" border="0"><tr><td style="white-space:nowrap" valign="top"><b>Language Version:&nbsp;</b></td><td>ActionScript 3.0</td></tr></table><table cellpadding="0" cellspacing="0" border="0"><tr><td style="white-space:nowrap" valign="top"><b>Runtime Versions:&nbsp;</b></td><td>AIR 1.0 Flash Player 9</td></tr></table><p></p><p></p><p>
+	 Allows enumeration of the proxied object's properties by index number. However, you cannot
+	 enumerate the properties of the Proxy class themselves. 
+	 This function supports implementing <code>for...in</code> and 
+	 <code>for each..in</code> loops on the object to retrieve property index values.
+	 <p>For example:</p>
+	 <div class="listing"><pre>
+     protected var _item:Array; // array of object's properties
+     override flash_proxy function nextNameIndex (index:int):int {
+         // initial call
+         if (index == 0) {
+             _item = new Array();
+             for (var x:* in _target) {
+                _item.push(x);
+             }
+         }
+     
+         if (index < _item.length) {
+             return index + 1;
+         } else {
+             return 0;
+         }
+     }
+     override flash_proxy function nextName(index:int):String {
+         return _item[index - 1];
+     }
+     </pre></div>
+     
+	 </p><p><span class="label"> Parameters </span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20px"></td><td><code><span class="label">index</span>:<a href="../../int.html"><a href="../../int.html">int</a></a></code> &mdash; The zero-based index value where the enumeration begins.
+	 </td></tr></table></p><p></p><span class="label">Returns</span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20"></td><td><code><a href="../../int.html"><a href="../../int.html">int</a></a></code> &mdash; The property's index value.
+	 </td></tr></table><p><span class="label">See also</span></p><div class="seeAlso"><a href="Proxy.html#nextName()" target="">Proxy.nextName()</a><br/><a href="Proxy.html#nextValue()" target="">Proxy.nextValue()</a></div></div><a name="nextValue()"></a><a name="nextValue(int)"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">nextValue</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code> <a href="../../statements.html#flash_proxy">flash_proxy</a> function nextValue(index:<a href="../../int.html"><a href="../../int.html">int</a></a>):<a href="../../specialTypes.html#*">*</a></code><p></p><table cellpadding="0" cellspacing="0" border="0"><tr><td style="white-space:nowrap" valign="top"><b>Language Version:&nbsp;</b></td><td>ActionScript 3.0</td></tr></table><table cellpadding="0" cellspacing="0" border="0"><tr><td style="white-space:nowrap" valign="top"><b>Runtime Versions:&nbsp;</b></td><td>AIR 1.0 Flash Player 9</td></tr></table><p></p><p></p><p>
+ 	 Allows enumeration of the proxied object's properties by index number to 
+	 retrieve property values. However, you cannot
+	 enumerate the properties of the Proxy class themselves. 
+	 This function supports implementing <code>for...in</code> and 
+	 <code>for each..in</code> loops on the object to retrieve the desired values.
+	 
+	 <p>For example (with code from <code>Proxy.nextNameIndex()</code>):</p>
+     <div class="listing"><pre>
+     protected var _item:Array; // array of object's properties
+     override flash_proxy function nextNameIndex (index:int):int {
+         // initial call
+         if (index == 0) {
+             _item = new Array();
+             for (var x:* in _target) {
+                _item.push(x);
+             }
+         }
+     
+         if (index < _item.length) {
+             return index + 1;
+         } else {
+             return 0;
+         }
+     }
+     override flash_proxy function nextName(index:int):String {
+         return _item[index - 1];
+     }
+     </pre></div>   
+     </p><p><span class="label"> Parameters </span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20px"></td><td><code><span class="label">index</span>:<a href="../../int.html"><a href="../../int.html">int</a></a></code> &mdash; The zero-based index value of the object's property.
+	 </td></tr></table></p><p></p><span class="label">Returns</span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20"></td><td><code><a href="../../specialTypes.html#*">*</a></code> &mdash; The property's value.
+	 </td></tr></table><p><span class="label">See also</span></p><div class="seeAlso"><a href="Proxy.html#nextNameIndex()" target="">Proxy.nextNameIndex()</a><br/><a href="Proxy.html#nextName()" target="">Proxy.nextName()</a></div></div><a name="setProperty()"></a><a name="setProperty(,)"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">setProperty</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code> <a href="../../statements.html#flash_proxy">flash_proxy</a> function setProperty(name:<a href="../../specialTypes.html#*">*</a>, value:<a href="../../specialTypes.html#*">*</a>):<a href="../../specialTypes.html#void">void</a></code><p></p><table cellpadding="0" cellspacing="0" border="0"><tr><td style="white-space:nowrap" valign="top"><b>Language Version:&nbsp;</b></td><td>ActionScript 3.0</td></tr></table><table cellpadding="0" cellspacing="0" border="0"><tr><td style="white-space:nowrap" valign="top"><b>Runtime Versions:&nbsp;</b></td><td>AIR 1.0 Flash Player 9</td></tr></table><p></p><p></p><p>
+	 Overrides a call to change a property's value. If the property can't be found, this method
+     creates a property with the specified name and value. 
+	 
+	 </p><p><span class="label"> Parameters </span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20px"></td><td><code><span class="label">name</span>:<a href="../../specialTypes.html#*">*</a></code> &mdash; The name of the property to modify.
+	 </td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">value</span>:<a href="../../specialTypes.html#*">*</a></code> &mdash; The value to set the property to.
+     </td></tr></table></p><p><span class="label">See also</span></p><div class="seeAlso"><a href="../../statements.html#set" target="">set statement</a><br/><a href="http://www.ecma-international.org/publications/standards/Ecma-262.htm" target="mm_external">ECMA-262 Language Specification, 3rd Edition, section 8.6.2.2</a></div></div><a name="includeExamplesSummary"></a><div class="detailSectionHeader">Examples<span class="usage"><a href="../../ExampleInstruct.html"> How to use examples </a></span></div><div class="exampleHeader">ProxyExample.as</div><br/><div class="detailBody"><div class="listing"><pre>
+package {
+    import flash.display.Sprite;
+    public class ProxyExample extends Sprite {
+        public function ProxyExample() {
+            var arr:ProxyArray = new ProxyArray();
+            arr.push(1);
+            arr.push(-2);
+            arr.push(3);
+            arr.push(4);
+            arr.push("five");
+            
+            trace(arr.length); // 5
+            trace(arr[0]);     // 1
+            trace(arr[1]);     // -2
+            trace(arr[2]);     // 3
+            trace(arr[3]);     // 4
+            trace(arr.sum());  // 6
+            arr.clear();
+            trace(arr); // (empty string)
+            
+            arr[0] = "zero";
+            trace(arr); // zero
+        }
+    }
+}
+import flash.utils.Proxy;
+import flash.utils.flash_proxy;
+dynamic class ProxyArray extends Proxy {
+    private var _item:Array;
+    public function ProxyArray() {
+        _item = new Array();
+    }
+    override flash_proxy function callProperty(methodName:*, ... args):* {
+        var res:*;
+        switch (methodName.toString()) {
+            case 'clear':
+                _item = new Array();
+                break;
+            case 'sum':
+                var sum:Number = 0;
+                for each (var i:* in _item) {
+                    // ignore non-numeric values
+                    if (!isNaN(i)) {
+                        sum += i;
+                    }
+                }
+                res = sum;
+                break;
+            default:
+                res = _item[methodName].apply(_item, args);
+                break;
+        }
+        return res;
+    }
+    override flash_proxy function getProperty(name:*):* {
+        return _item[name];
+    }
+    override flash_proxy function setProperty(name:*, value:*):void {
+        _item[name] = value;
+    }
+}
+</pre></div></div><br/><br/><hr><br/><p></p><center class="copyright"> &copy; 2009 Adobe Systems Incorporated. All rights reserved. <br/>Thu Feb 19 2009, 09:49 AM -08:00  </center><div style="display:none">Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy Proxy </div><div style="display:none">flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy flash.utils.Proxy </div></div></body></html><!-- &copy; 2009 Adobe Systems Incorporated. All rights reserved. <br/>Thu Feb 19 2009, 09:49 AM -08:00  -->

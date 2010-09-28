@@ -1,0 +1,591 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0014)about:internet -->
+<!-- saved from url=(0014)about:internet --><html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta name="book" content="ActionScript&nbsp;3.0&nbsp;Language&nbsp;and&nbsp;Components&nbsp;Reference"><meta name="lang" content="-"><link rel="stylesheet" href="style.css" type="text/css" media="screen"><link rel="stylesheet" href="print.css" type="text/css" media="print"><link rel="stylesheet" href="override.css" type="text/css"><title>SQL error detail messages, ids, and arguments (ActionScript 3.0)</title></head><body><script language="javascript" type="text/javascript" src="asdoc.js"></script><script language="javascript" type="text/javascript" src="help.js"></script><script language="javascript" type="text/javascript" src="cookies.js"></script><script language="javascript" type="text/javascript">  <!--  
+        
+         
+        asdocTitle = "SQL error detail messages, ids, and arguments - ActionScript 3.0 Language and Components Reference"; 
+        var baseRef = ''; 
+        window.onload = configPage; 
+          -->  </script>
+<script language="javascript" type="text/javascript"><!--
+function submitValue(){
+var searchStr=document.getElementById('search-livedocs').value;
+window.location="search.html"+"###"+searchStr;
+}
+--></script><script type="text/javascript"> scrollToNameAnchor(); </script><table class="titleTable" cellpadding="0" cellspacing="0" id="titleTable" style="display:none"><tr><td class="titleTableTitle" align="left">ActionScript 3.0 Language and Components Reference</td><td class="titleTableSearch" align="center"><form class="searchForm" method="get" action="search.html" onsubmit="submitValue();"><input class="hidden" name="loc" value="" type="hidden"><input class="hidden" name="termPrefix" value="" type="hidden"><input class="hidden" name="term" value="" type="hidden"><input class="hidden" name="area" value="" type="hidden"><input id="search-livedocs" name="search_text" value="" title="" type="text"> <input type="button" name="action" value="Search" onclick="submitValue()"></form></td><td class="titleTableTopNav" align="right"><a href="package-summary.html" onclick="loadClassListFrame('all-classes.html')">All Packages</a>&nbsp;|&nbsp;<a href="class-summary.html" onclick="loadClassListFrame('all-classes.html')">All Classes</a>&nbsp;|&nbsp;<a href="language-elements.html">Language Elements</a>&nbsp;| <a href="all-index-Symbols.html" onclick="loadClassListFrame('index-list.html')">Index</a>&nbsp;|&nbsp;<a href="appendixes.html">Appendixes</a>&nbsp;|&nbsp;<a href="conventions.html">Conventions</a>&nbsp;|&nbsp;<a id="framesLink1" href="index.html?localDatabaseSQLErrorDetails.html&amp;all-classes.html">Frames</a><a id="noFramesLink1" style="display:none" href="" onclick="parent.location=document.location"> No Frames </a></td><td class="titleTableLogo" align="right" rowspan="3"><img src="images/logo.jpg" class="logoImage" alt=" Adobe Logo " title=" Adobe Logo "></td></tr><tr class="titleTableRow2"><td class="titleTableSubTitle" id="subTitle" align="left"> SQL error detail messages, ids, and arguments </td><td class="titleTableSubNav" id="subNav" align="right" colspan="2"></td></tr><tr class="titleTableRow3"><td colspan="3">&nbsp;</td></tr></table><script language="javascript" type="text/javascript" xml:space="preserve">                
+                                            
+        				
+        <!--				
+          				    				
+          					
+          if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle(" SQL error detail messages, ids, and arguments "); titleBar_setSubNav(false,false,false,false,false,false,false,false,false,false,false,false,false,false);}				    
+          				        				    
+          				
+        -->                
+                                            
+        			
+      </script><div class="MainContent">
+      
+		<div style="height:15px;" width="100%"></div>
+<p>The SQLError class represents various errors that can occur while working with an Adobe AIR local SQL database. For any given exception, the SQLError instance has a <code>details</code> property containing an English error message. In addition, each error message has an associated unique identifier that is available in the SQLError object's <code>detailID</code> property. Using the <code>detailID</code> property, an application can identify the specific <code>details</code> error message. The application can provide alternate text for the end user in the language of his or her locale. The argument values in the <code>detailArguments</code> array can be substituted in the appropriate position in the error message string. This is useful for applications that wish to display the <code>details</code> property error message for an error directly to end users in a specific locale.</p>
+<p>The following table contains a list of the <code>detailID</code> values and the associated English error message text. Placeholder text in the messages indicates where <code>detailArguments</code> values are substituted in by the runtime. This list can be used as a source for localizing the error messages that can occur in SQL database operations.</p>
+<table class="innertable">
+  <thead>
+    <tr>
+      <th>SQLError <code>detailID</code></th>
+	  <th>English error detail message and parameters</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1001</td>
+      <td>Connection closed.</td>
+    </tr>
+    <tr>
+      <td>1002</td>
+      <td>Database must be open to perform this operation.</td>
+    </tr>
+    <tr>
+      <td>1003</td>
+      <td>%s [,|and %s] parameter name(s) found in parameters property but not in the SQL specified.</td>
+    </tr>
+	<tr>
+	  <td>1004</td>
+	  <td>Mismatch in parameter count. Found %d in SQL specified and %d value(s) set in parameters property.<br />Expecting values for %s [,|and %s].</td>
+	</tr>
+    <tr>
+      <td>1005</td>
+      <td>Auto compact could not be turned on.</td>
+    </tr>
+    <tr>
+      <td>1006</td>
+      <td>The pageSize value could not be set.</td>
+    </tr>
+    <tr>
+      <td>1007</td>
+      <td>The schema object with name '%s' of type '%s' in database '%s' was not found.</td>
+    </tr>
+    <tr>
+      <td>1008</td>
+      <td>The schema object with name '%s' in database '%s' was not found.</td>
+    </tr>
+    <tr>
+      <td>1009</td>
+      <td>No schema objects with type '%s' in database '%s' were found.</td>
+    </tr>
+	<tr>
+	  <td>1010</td>
+	  <td>No schema objects in database '%s' were found.</td>
+	</tr>
+    <tr>
+      <td>2001</td>
+      <td>parser stack overflow</td>
+    </tr>
+    <tr>
+      <td>2002</td>
+      <td>too many arguments on function '%s'</td>
+    </tr>
+    <tr>
+      <td>2003</td>
+      <td>near '%s': syntax error</td>
+    </tr>
+    <tr>
+      <td>2004</td>
+      <td>there is already another table or index with this name: '%s'</td>
+    </tr>
+    <tr>
+      <td>2005</td>
+      <td>PRAGMA is not allowed in SQL.</td>
+    </tr>
+    <tr>
+      <td>2006</td>
+      <td>not a writable directory</td>
+    </tr>
+    <tr>
+      <td>2007</td>
+      <td>unknown or unsupported join type: '%s %s %s'</td>
+    </tr>
+    <tr>
+      <td>2008</td>
+      <td>RIGHT and FULL OUTER JOINs are not currently supported</td>
+    </tr>
+    <tr>
+      <td>2009</td>
+      <td>a NATURAL join may not have an ON or USING clause</td>
+    </tr>
+    <tr>
+      <td>2010</td>
+      <td>cannot have both ON and USING clauses in the same join</td>
+    </tr>
+    <tr>
+      <td>2011</td>
+      <td>cannot join using column '%s' - column not present in both tables</td>
+    </tr>
+    <tr>
+      <td>2012</td>
+      <td>only a single result allowed for a SELECT that is part of an expression</td>
+    </tr>
+    <tr>
+      <td>2013</td>
+      <td>no such table: '[%s.]%s'</td>
+    </tr>
+    <tr>
+      <td>2014</td>
+      <td>no tables specified</td>
+    </tr>
+    <tr>
+      <td>2015</td>
+      <td>too many columns in result set|too many columns on '%s'</td>
+    </tr>
+    <tr>
+      <td>2016</td>
+      <td>%s ORDER|GROUP BY term out of range - should be between 1 and %d</td>
+    </tr>
+    <tr>
+      <td>2017</td>
+      <td>too many terms in ORDER BY clause</td>
+    </tr>
+    <tr>
+      <td>2018</td>
+      <td>%s ORDER BY term out of range - should be between 1 and %d</td>
+    </tr>
+    <tr>
+      <td>2019</td>
+      <td>%r ORDER BY term does not match any column in the result set</td>
+    </tr>
+    <tr>
+      <td>2020</td>
+      <td>ORDER BY clause should come after '%s' not before</td>
+    </tr>
+    <tr>
+      <td>2021</td>
+      <td>LIMIT clause should come after '%s' not before</td>
+    </tr>
+    <tr>
+      <td>2022</td>
+      <td>SELECTs to the left and right of '%s' do not have the same number of result columns</td>
+    </tr>
+    <tr>
+      <td>2023</td>
+      <td>a GROUP BY clause is required before HAVING</td>
+    </tr>
+    <tr>
+      <td>2024</td>
+      <td>aggregate functions are not allowed in the GROUP BY clause</td>
+    </tr>
+    <tr>
+      <td>2025</td>
+      <td>DISTINCT in aggregate must be followed by an expression</td>
+    </tr>
+    <tr>
+      <td>2026</td>
+      <td>too many terms in compound SELECT</td>
+    </tr>
+    <tr>
+      <td>2027</td>
+      <td>too many terms in ORDER|GROUP BY clause</td>
+    </tr>
+    <tr>
+      <td>2028</td>
+      <td>temporary trigger may not have qualified name</td>
+    </tr>
+<!--    <tr>
+      <td>2029</td>
+      <td>cannot create triggers on virtual tables</td>
+    </tr>-->
+    <tr>
+      <td>2030</td>
+      <td>trigger '%s' already exists</td>
+    </tr>
+    <tr>
+      <td>2032</td>
+      <td>cannot create BEFORE|AFTER trigger on view: '%s'</td>
+    </tr>
+    <tr>
+      <td>2033</td>
+      <td>cannot create INSTEAD OF trigger on table: '%s'</td>
+    </tr>
+    <tr>
+      <td>2034</td>
+      <td>no such trigger: '%s'</td>
+    </tr>
+    <tr>
+      <td>2035</td>
+      <td>recursive triggers not supported ('%s')</td>
+    </tr>
+    <tr>
+      <td>2036</td>
+      <td>no such column: %s[.%s[.%s]]</td>
+    </tr>
+    <tr>
+      <td>2037</td>
+      <td>VACUUM is not allowed from SQL.</td>
+    </tr>
+<!--    <tr>
+      <td>2038</td>
+      <td>CREATE VIRTUAL TABLE is not allowed in SQL.</td>
+    </tr>-->
+    <tr>
+      <td>2043</td>
+      <td>table '%s': indexing function returned an invalid plan</td>
+    </tr>
+    <tr>
+      <td>2044</td>
+      <td>at most %d tables in a join</td>
+    </tr>,
+    <tr>
+      <td>2046</td>
+      <td>Cannot add a PRIMARY KEY column</td>
+    </tr>
+    <tr>
+      <td>2047</td>
+      <td>Cannot add a UNIQUE column</td>
+    </tr>
+    <tr>
+      <td>2048</td>
+      <td>Cannot add a NOT NULL column with default value NULL</td>
+    </tr>
+    <tr>
+      <td>2049</td>
+      <td>Cannot add a column with non-constant default</td>
+    </tr>
+    <tr>
+      <td>2050</td>
+      <td>Cannot add a column to a view</td>
+    </tr>
+    <tr>
+      <td>2051</td>
+      <td>ANALYZE is not allowed in SQL.</td>
+    </tr>
+    <tr>
+      <td>2052</td>
+      <td>invalid name: '%s'</td>
+    </tr>
+    <tr>
+      <td>2053</td>
+      <td>ATTACH is not allowed from SQL.</td>
+    </tr>
+    <tr>
+      <td>2054</td>
+      <td>%s '%s' cannot reference objects in database '%s'</td>
+    </tr>
+    <tr>
+      <td>2055</td>
+      <td>access to '[%s.]%s.%s' is prohibited</td>
+    </tr>
+    <tr>
+      <td>2056</td>
+      <td>not authorized</td>
+    </tr>
+    <tr>
+      <td>2058</td>
+      <td>no such view: '[%s.]%s'</td>
+    </tr>
+    <tr>
+      <td>2060</td>
+      <td>temporary table name must be unqualified</td>
+    </tr>
+    <tr>
+      <td>2061</td>
+      <td>table '%s' already exists</td>
+    </tr>
+    <tr>
+      <td>2062</td>
+      <td>there is already an index named: '%s'</td>
+    </tr>
+    <tr>
+      <td>2064</td>
+      <td>duplicate column name: '%s'</td>
+    </tr>
+    <tr>
+      <td>2065</td>
+      <td>table '%s' has more than one primary key</td>
+    </tr>
+    <tr>
+      <td>2066</td>
+      <td>AUTOINCREMENT is only allowed on an INTEGER PRIMARY KEY</td>
+    </tr>
+    <tr>
+      <td>2067</td>
+      <td>no such collation sequence: '%s'</td>
+    </tr>
+    <tr>
+      <td>2068</td>
+      <td>parameters are not allowed in views</td>
+    </tr>
+    <tr>
+      <td>2069</td>
+      <td>view '%s' is circularly defined</td>
+    </tr>
+    <tr>
+      <td>2070</td>
+      <td>table '%s' may not be dropped</td>
+    </tr>
+    <tr>
+      <td>2071</td>
+      <td>use DROP VIEW to delete view '%s'</td>
+    </tr>
+    <tr>
+      <td>2072</td>
+      <td>use DROP TABLE to delete table '%s'</td>
+    </tr>
+    <tr>
+      <td>2073</td>
+      <td>foreign key on '%s' should reference only one column of table '%s'</td>
+    </tr>
+    <tr>
+      <td>2074</td>
+      <td>number of columns in foreign key does not match the number of columns in the referenced table</td>
+    </tr>
+    <tr>
+      <td>2075</td>
+      <td>unknown column '%s' in foreign key definition</td>
+    </tr>
+    <tr>
+      <td>2076</td>
+      <td>table '%s' may not be indexed</td>
+    </tr>
+    <tr>
+      <td>2077</td>
+      <td>views may not be indexed</td>
+    </tr>
+<!--    <tr>
+      <td>2078</td>
+      <td>virtual tables may not be indexed</td>
+    </tr>-->
+    <tr>
+      <td>2080</td>
+      <td>conflicting ON CONFLICT clauses specified</td>
+    </tr>
+    <tr>
+      <td>2081</td>
+      <td>no such index: '%s'</td>
+    </tr>
+    <tr>
+      <td>2082</td>
+      <td>index associated with UNIQUE or PRIMARY KEY constraint cannot be dropped</td>
+    </tr>
+    <tr>
+      <td>2083</td>
+      <td>BEGIN is not allowed in SQL.</td>
+    </tr>
+    <tr>
+      <td>2084</td>
+      <td>COMMIT is not allowed in SQL.</td>
+    </tr>
+    <tr>
+      <td>2085</td>
+      <td>ROLLBACK is not allowed in SQL.</td>
+    </tr>
+    <tr>
+      <td>2086</td>
+      <td>unable to open a temporary database file for storing temporary tables</td>
+    </tr>
+    <tr>
+      <td>2087</td>
+      <td>unable to identify the object to be reindexed</td>
+    </tr>
+    <tr>
+      <td>2088</td>
+      <td>table '%s' may not be modified</td>
+    </tr>
+    <tr>
+      <td>2089</td>
+      <td>cannot modify '%s' because it is a view</td>
+    </tr>
+    <tr>
+      <td>2090</td>
+      <td>variable number must be between ?0 and ?%d</td>
+    </tr>
+    <tr>
+      <td>2091</td>
+      <td>too many SQL variables</td>
+    </tr>
+    <tr>
+      <td>2092</td>
+      <td>misuse of aliased aggregate '%s'</td>
+    </tr>
+    <tr>
+      <td>2093</td>
+      <td>ambiguous column name: '[%s.[%s.]]%s'</td>
+    </tr>
+    <tr>
+      <td>2094</td>
+      <td>no such function: '%s'</td>
+    </tr>
+    <tr>
+      <td>2095</td>
+      <td>wrong number of arguments to function '%s'</td>
+    </tr>
+    <tr>
+      <td>2096</td>
+      <td>subqueries prohibited in CHECK constraints</td>
+    </tr>
+    <tr>
+      <td>2097</td>
+      <td>parameters prohibited in CHECK constraints</td>
+    </tr>
+    <tr>
+      <td>2098</td>
+      <td>Expression tree is too large (maximum depth %d)</td>
+    </tr>
+    <tr>
+      <td>2099</td>
+      <td>RAISE() may only be used within a trigger-program</td>
+    </tr>
+    <tr>
+      <td>2100</td>
+      <td>table '%s' has %d columns but %d values were supplied</td>
+    </tr>
+    <tr>
+      <td>2101</td>
+      <td>database schema is locked: '%s'</td>
+    </tr>
+    <tr>
+      <td>2102</td>
+      <td>statement too long</td>
+    </tr>
+    <tr>
+      <td>2103</td>
+      <td>Unable to delete/modify collation sequence due to active statements</td>
+    </tr>
+    <tr>
+      <td>2104</td>
+      <td>too many attached databases - max %d</td>
+    </tr>
+    <tr>
+      <td>2105</td>
+      <td>cannot ATTACH database within transaction</td>
+    </tr>
+    <tr>
+      <td>2106</td>
+      <td>database '%s' is already in use</td>
+    </tr>
+    <tr>
+      <td>2108</td>
+      <td>attached databases must use the same text encoding as main database</td>
+    </tr>
+    <tr>
+      <td>2200</td>
+      <td>out of memory</td>
+    </tr>
+    <tr>
+      <td>2201</td>
+      <td>unable to open database</td>
+    </tr>
+    <tr>
+      <td>2202</td>
+      <td>cannot DETACH database within transaction</td>
+    </tr>
+    <tr>
+      <td>2203</td>
+      <td>cannot detach database: '%s'</td>
+    </tr>
+    <tr>
+      <td>2204</td>
+      <td>database '%s' is locked</td>
+    </tr>
+    <tr>
+      <td>2205</td>
+      <td>Unable to acquire a read lock on the database</td>
+    </tr>
+    <tr>
+      <td>2206</td>
+      <td>[column|columns] '%s'[,'%s'] are not [unique|is] not unique</td>
+    </tr>
+    <tr>
+      <td>2207</td>
+      <td>malformed database schema</td>
+    </tr>
+    <tr>
+      <td>2208</td>
+      <td>unsupported file format</td>
+    </tr>
+    <tr>
+      <td>2209</td>
+      <td>unrecognized token: '%s'</td>
+    </tr>
+    <tr>
+      <td>2300</td>
+      <td>could not convert text value to numeric value.</td>
+    </tr>
+    <tr>
+      <td>2301</td>
+      <td>could not convert string value to date</td>
+    </tr>
+    <tr>
+      <td>2302</td>
+      <td>could not convert floating point value to integer without loss of data.</td>
+    </tr>
+    <tr>
+      <td>2303</td>
+      <td>cannot rollback transaction - SQL statements in progress</td>
+    </tr>
+    <tr>
+      <td>2304</td>
+      <td>cannot commit transaction - SQL statements in progress</td>
+    </tr>
+    <tr>
+      <td>2305</td>
+      <td>database table is locked: '%s'</td>
+    </tr>
+    <tr>
+      <td>2306</td>
+      <td>read-only table</td>
+    </tr>
+    <tr>
+      <td>2307</td>
+      <td>string or blob too big</td>
+    </tr>
+    <tr>
+      <td>2309</td>
+      <td>cannot open indexed column for writing</td>
+    </tr>
+    <tr>
+      <td>2400</td>
+      <td>cannot open value of type %s</td>
+    </tr>
+    <tr>
+      <td>2401</td>
+      <td>no such rowid: %s</td>
+    </tr>
+    <tr>
+      <td>2402</td>
+      <td>object name reserved for internal use: '%s'</td>
+    </tr>
+    <tr>
+      <td>2403</td>
+      <td>view '%s' may not be altered</td>
+    </tr>
+    <tr>
+      <td>2404</td>
+      <td>default value of column '%s' is not constant</td>
+    </tr>
+    <tr>
+      <td>2405</td>
+      <td>not authorized to use function '%s'</td>
+    </tr>
+    <tr>
+      <td>2406</td>
+      <td>misuse of aggregate function '%s'</td>
+    </tr>
+    <tr>
+      <td>2407</td>
+      <td>misuse of aggregate: '%s'</td>
+    </tr>
+    <tr>
+      <td>2408</td>
+      <td>no such database: '%s'</td>
+    </tr>
+    <tr>
+      <td>2409</td>
+      <td>table '%s' has no column named '%s'</td>
+    </tr>
+    <tr>
+      <td>2501</td>
+      <td>no such module: %s</td>
+    </tr>
+  </tbody>
+</table>
+    <div style="height:20px;" width="100%"></div>
+	<br><center class="copyright"> &copy; 2009 Adobe Systems Incorporated. All rights reserved. <br/>Thu Feb 19 2009, 09:43 AM -08:00  </center></div></body></html><!-- &copy; 2009 Adobe Systems Incorporated. All rights reserved. <br/>Thu Feb 19 2009, 09:43 AM -08:00  -->
