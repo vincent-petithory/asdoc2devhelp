@@ -1,10 +1,19 @@
-commit 32d0b471d08f4da8f301e320f53c9ed10890f8d9
+commit c031bee528f4d8cd250f305d3065e5d374812bc8
+Author: Vincent Petithory <vincent.petithory@gmail.com>
+Date:   Tue Sep 28 21:49:37 2010 +0200
+
+    Change incorrect book_name in dist module.
+
+ as2dh/dist.py |    4 ++--
+ 1 files changed, 2 insertions(+), 2 deletions(-)
+
+commit 0dbf37065ec6dbd721b441eafcc81ecb99eeb08d
 Author: Vincent Petithory <vincent.petithory@gmail.com>
 Date:   Tue Sep 28 19:56:35 2010 +0200
 
     Add samples to install/uninstall asdocs with both python lib and cmd
 
- ChangeLog                                          |  881 +++-
+ ChangeLog                                          |  882 +++-
  samples/asdocs/AS3LR/AC_OETags.js                  |  119 +
  samples/asdocs/AS3LR/ArgumentError.html            |   81 +
  samples/asdocs/AS3LR/Array.html                    | 1138 ++++
@@ -872,7 +881,7 @@ Date:   Tue Sep 28 19:56:35 2010 +0200
  samples/asdocs/as3-gettext-0.5/title-bar.html      |   41 +
  samples/samples-cmd.sh                             |    3 +
  samples/samples-lib.py                             |   29 +
- 868 files changed, 168541 insertions(+), 3 deletions(-)
+ 868 files changed, 168542 insertions(+), 3 deletions(-)
 
 commit a82775474d7daac09564160b6213b0adfbf48dd7
 Author: Vincent Petithory <vincent.petithory@gmail.com>

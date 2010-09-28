@@ -19,7 +19,7 @@ def install(asdoc_path, title, name, prefix, is_dry_run = False):
     install_devhelp_file(asdoc_dist_path, title, name, prefix, is_dry_run)
 
 def install_asdoc_content(asdoc_path, prefix, is_dry_run = False):
-    book_name = os.path.realpath(os.path.basename(asdoc_path))
+    book_name = os.path.basename(asdoc_path)
     # Make asdoc directory if necessary
     share_doc_path = '%s/share/doc' % prefix
     if not os.path.exists(share_doc_path):
@@ -33,7 +33,7 @@ def install_asdoc_content(asdoc_path, prefix, is_dry_run = False):
     return asdoc_dist_path
 
 def install_devhelp_file(asdoc_path, title, name, prefix, is_dry_run = False):
-    book_name = os.path.realpath(os.path.basename(asdoc_path))
+    book_name = os.path.basename(asdoc_path)
     # Make devhelp content
     asdoc = as2dh.Asdoc(asdoc_path)
     dh = as2dh.Devhelp(asdoc, title, name)
